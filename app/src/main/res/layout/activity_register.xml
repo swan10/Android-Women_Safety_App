@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:background="#B2DFDB"
+    android:layout_height="match_parent">
+
+    <EditText
+        android:id="@+id/email_reg"
+        android:layout_width="350dp"
+        android:layout_height="45dp"
+        android:background="@drawable/rounded_button"
+        android:drawableStart="@drawable/ic_email"
+        android:ems="10"
+        android:hint="  Email"
+        android:inputType="textEmailAddress"
+        android:paddingLeft="15dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.508"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/name_reg"
+        app:layout_constraintVertical_bias="0.04" />
+
+    <EditText
+        android:id="@+id/pwd_reg"
+        android:layout_width="350dp"
+        android:layout_height="45dp"
+        android:background="@drawable/rounded_button"
+        android:drawableLeft="@drawable/pwd"
+        android:ems="10"
+        android:maxLength="5"
+        android:hint="  Password"
+        android:inputType="textPassword"
+        android:paddingLeft="15dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.508"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/email_reg"
+        app:layout_constraintVertical_bias="0.041" />
+
+    <EditText
+        android:id="@+id/name_reg"
+        android:layout_width="350dp"
+        android:layout_height="45dp"
+        android:background="@drawable/rounded_button"
+        android:drawableLeft="@drawable/ic_person"
+        android:ems="10"
+        android:hint="  Name"
+        android:importantForAutofill="no"
+        android:inputType="textPersonName"
+        android:paddingStart="15dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.491"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView"
+        app:layout_constraintVertical_bias="0.036" />
+
+    <Button
+        android:id="@+id/button_reg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/rounded_button"
+        android:text="Register"
+        android:textAllCaps="false"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/pwd_reg"
+        app:layout_constraintVertical_bias="0.047" />
+
+    <Button
+        android:id="@+id/button_regg"
+        android:layout_width="300dp"
+        android:layout_height="40dp"
+        android:background="@drawable/rounded_button"
+        android:drawableStart="@drawable/google"
+        android:paddingLeft="20dp"
+        android:paddingRight="25dp"
+        android:text="Sign up with Google"
+        android:textAllCaps="false"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button_reg"
+        app:layout_constraintVertical_bias="0.331" />
+
+    <Button
+        android:id="@+id/button_regf"
+        android:layout_width="300dp"
+        android:layout_height="40dp"
+        android:background="@drawable/rounded_button"
+        android:drawableStart="@drawable/facebook"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:text="Sign up with Facebook"
+        android:textAllCaps="false"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button_regg"
+        app:layout_constraintVertical_bias="0.099" />
+
+    <TextView
+        android:id="@+id/textView_regl"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Already have an Account? Sign in.."
+        android:textColorHint="#000000"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button_regf"
+        app:layout_constraintVertical_bias="0.218" />
+
+    <TextView
+        android:id="@+id/textView_regsk"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Use as a Guest"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView_regl"
+        app:layout_constraintVertical_bias="0.203" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="175dp"
+        android:layout_height="90dp"
+        android:layout_marginTop="40dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@drawable/woman" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
