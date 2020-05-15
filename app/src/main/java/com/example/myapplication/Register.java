@@ -41,7 +41,7 @@ public class Register extends AppCompatActivity {
         tv_sk.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent=new Intent(Register.this,home.class);
+                Intent intent=new Intent(Register.this, HomeActivity.class);
                 startActivity(intent);
             }
         });

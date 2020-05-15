@@ -36,7 +36,7 @@ public class Intro extends AppCompatActivity {
         textView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent=new Intent(Intro.this,home.class);
+                Intent intent=new Intent(Intro.this, HomeActivity.class);
                 startActivity(intent);
             }
         });
