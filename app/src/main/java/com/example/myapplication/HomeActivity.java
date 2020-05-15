@@ -6,6 +6,11 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
+import android.widget.CompoundButton;
+import android.widget.Switch;
+import android.widget.Toast;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
@@ -39,6 +44,26 @@ public class HomeActivity extends AppCompatActivity {
 
                 }
                 return false;
+            }
+        });
+        final Button customButton = findViewById(R.id.custom_button);
+        Switch switchEnableButton = findViewById(R.id.custom_switch);
+
+        customButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(HomeActivity.this, "Click", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        switchEnableButton.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (isChecked) {
+                    customButton.setEnabled(true);
+                } else {
+                    customButton.setEnabled(false);
+                }
             }
         });
     }

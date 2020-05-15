@@ -4,8 +4,41 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FFF176"
+    android:background="#C8E6C9"
     tools:context=".MainActivity">
+    <Button
+        android:id="@+id/custom_button"
+        android:layout_width="241dp"
+        android:layout_height="236dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+
+        android:layout_marginLeft="60dp"
+        android:layout_marginTop="130dp"
+
+        android:layout_marginRight="60dp"
+        android:layout_centerInParent="true"
+        android:background="@drawable/custom_button" />
+
+
+    <Switch
+        android:id="@+id/custom_switch"
+        android:layout_width="113dp"
+        android:layout_height="38dp"
+        android:layout_below="@+id/custom_button"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+
+        android:layout_marginLeft="120dp"
+        android:layout_marginTop="30dp"
+
+        android:layout_marginRight="120dp"
+        android:checked="true"
+        android:text="Enable"
+        android:textSize="20dp"
+
+        android:layout_centerHorizontal="true"/>
+
 
 
 
