@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ProfileActivity">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <GridLayout
+            android:id="@+id/g1"
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:alignmentMode="alignMargins"
+            android:background="#80DEEA">
+
+            <RelativeLayout
+
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+
+                android:orientation="vertical"
+                android:padding="16dp"
+                android:background="#E57373">
+
+                <ImageView
+                    android:layout_width="175dp"
+                    android:layout_height="175dp"
+                    android:src="@drawable/woman"
+
+                    android:layout_centerInParent="true"/>
+
+            </RelativeLayout>
+
+        </GridLayout>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:background="#E8EAF6">
+
+            <EditText
+                android:id="@+id/edp1"
+                android:layout_width="350dp"
+                android:layout_height="45dp"
+                android:background="@drawable/rounded_button"
+                android:drawableLeft="@drawable/ic_person"
+                android:ems="10"
+                android:maxLength="7"
+                android:paddingLeft="15dp"
+                android:layout_margin="15dp"
+                android:inputType="textPersonName" />
+
+            <EditText
+                android:id="@+id/edp2"
+                android:layout_width="350dp"
+                android:layout_height="45dp"
+                android:background="@drawable/rounded_button"
+                android:drawableLeft="@drawable/ic_email"
+                android:ems="10"
+                android:layout_margin="15dp"
+                android:paddingLeft="15dp"
+                android:inputType="textEmailAddress"
+                android:layout_below="@+id/edp1"/>
+
+            <EditText
+                android:id="@+id/edp3"
+                android:layout_width="350dp"
+                android:layout_height="45dp"
+                android:background="@drawable/rounded_button"
+                android:drawableLeft="@drawable/pwd"
+                android:ems="10"
+                android:paddingLeft="15dp"
+                android:layout_margin="15dp"
+                android:inputType="textPassword"
+                android:layout_below="@+id/edp2"/>
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/bp1"
+                android:layout_below="@+id/edp3"
+                android:layout_centerInParent="true"
+                android:text="Update"
+                android:textAllCaps="false"
+                android:textSize="20dp"
+                android:visibility="invisible"
+                android:layout_marginTop="20dp"/>
+        </RelativeLayout>
+    </LinearLayout>
+
+</RelativeLayout>

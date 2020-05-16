@@ -4,18 +4,45 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.database.Cursor;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.RelativeLayout;
+import android.widget.TextView;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class Setting extends AppCompatActivity {
+    DatabaseHelper myDb;
+    private TextView name;
+    RelativeLayout r1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_settings);
+        myDb=new DatabaseHelper(this);
+        name=findViewById(R.id.sname);
+//profile
+        Cursor cursor=myDb.getAllData();
+        StringBuilder stringBuilder=new StringBuilder();
+        while (cursor.moveToNext()){
+            stringBuilder.append(cursor.getString(1));
+        }
+        name.setText(stringBuilder);
 
+        r1=findViewById(R.id.r1);
+        r1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i=new Intent(Setting.this,ProfileActivity.class);
+                startActivity(i);
+            }
+        });
+
+
+//bottom navigation
         BottomNavigationView bottomNavigationView=findViewById(R.id.bottom_navigation);
 
         bottomNavigationView.setSelectedItemId(R.id.settings);

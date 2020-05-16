@@ -22,7 +22,7 @@
 
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-
+                    android:id="@+id/r1"
                     android:orientation="vertical"
                     android:padding="16dp"
                     android:background="#E57373">
@@ -41,14 +41,16 @@
                         android:layout_marginRight="10dp"
                         android:text="Your Name"
                         android:textSize="30dp"
-                        android:layout_alignParentRight="true"/>
+                        android:layout_alignParentRight="true"
+                        android:id="@+id/sname"/>
 
                 </RelativeLayout>
 
         </GridLayout>
         <ScrollView
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:background="#E8EAF6">
             <GridLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -62,23 +64,23 @@
                     android:layout_height="wrap_content"
                     android:layout_columnWeight="1"
                     android:layout_rowWeight="1"
-                    android:layout_margin="15dp"
+                    android:layout_margin="20dp"
                     app:cardCornerRadius="12dp">
                     <RelativeLayout
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:padding="12dp"
-                        android:background="#03A9F4">
+                        android:background="#ffff">
                         <ImageView
                             android:layout_width="100dp"
                             android:layout_height="100dp"
-                            android:src="@drawable/ic_person"
+                            android:src="@drawable/ic_edit"
                             android:id="@+id/sim1"/>
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_centerInParent="true"
-                            android:text="Profile"
+                            android:text="Edit"
                             android:textSize="20dp"
                             android:layout_below="@+id/sim1"/>
                     </RelativeLayout>
@@ -88,23 +90,23 @@
                     android:layout_height="wrap_content"
                     android:layout_columnWeight="1"
                     android:layout_rowWeight="1"
-                    android:layout_margin="15dp"
+                    android:layout_margin="20dp"
                     app:cardCornerRadius="12dp">
                     <RelativeLayout
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:padding="12dp"
-                        android:background="#03A9F4">
+                        android:background="#ffff">
                         <ImageView
                             android:layout_width="100dp"
                             android:layout_height="100dp"
-                            android:src="@drawable/ic_person"
+                            android:src="@drawable/ic_settings"
                             android:id="@+id/sim2"/>
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_centerInParent="true"
-                            android:text="Profile"
+                            android:text="Settings"
                             android:textSize="20dp"
                             android:layout_below="@+id/sim2"/>
                     </RelativeLayout>
@@ -114,23 +116,23 @@
                     android:layout_height="wrap_content"
                     android:layout_columnWeight="1"
                     android:layout_rowWeight="1"
-                    android:layout_margin="15dp"
+                    android:layout_margin="20dp"
                     app:cardCornerRadius="12dp">
                     <RelativeLayout
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:padding="12dp"
-                        android:background="#03A9F4">
+                        android:background="#ffff">
                         <ImageView
                             android:layout_width="100dp"
                             android:layout_height="100dp"
-                            android:src="@drawable/ic_person"
+                            android:src="@drawable/ic_info"
                             android:id="@+id/sim3"/>
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_centerInParent="true"
-                            android:text="Profile"
+                            android:text="Info"
                             android:textSize="20dp"
                             android:layout_below="@+id/sim3"/>
                     </RelativeLayout>
@@ -140,23 +142,23 @@
                     android:layout_height="wrap_content"
                     android:layout_columnWeight="1"
                     android:layout_rowWeight="1"
-                    android:layout_margin="15dp"
+                    android:layout_margin="20dp"
                     app:cardCornerRadius="12dp">
                     <RelativeLayout
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:padding="12dp"
-                        android:background="#03A9F4">
+                        android:background="#ffff">
                         <ImageView
                             android:layout_width="100dp"
                             android:layout_height="100dp"
-                            android:src="@drawable/ic_person"
+                            android:src="@drawable/ic_exit_to_app"
                             android:id="@+id/sim4"/>
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_centerInParent="true"
-                            android:text="Profile"
+                            android:text="Exit"
                             android:textSize="20dp"
                             android:layout_below="@+id/sim4"/>
                     </RelativeLayout>
