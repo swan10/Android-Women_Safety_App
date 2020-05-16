@@ -8,15 +8,16 @@
     android:layout_height="match_parent">
 
     <EditText
-        android:id="@+id/email_log"
+        android:id="@+id/name_log"
         android:layout_width="350dp"
         android:layout_height="45dp"
         android:background="@drawable/rounded_button"
-        android:drawableStart="@drawable/ic_email"
+        android:drawableStart="@drawable/ic_person"
         android:ems="10"
-        android:hint="  Email"
+        android:hint="  Name"
         android:inputType="textEmailAddress"
         android:paddingLeft="15dp"
+        android:paddingRight="15dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.508"
@@ -34,11 +35,12 @@
         android:hint="  Password"
         android:inputType="textPassword"
         android:paddingLeft="15dp"
+        android:paddingRight="35dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.508"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/email_log"
+        app:layout_constraintTop_toBottomOf="@+id/name_log"
         app:layout_constraintVertical_bias="0.057" />
 
     <Button
