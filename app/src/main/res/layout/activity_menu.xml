@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@android:color/holo_blue_dark"
+    android:background="#64959C"
     tools:context=".Menu">
     <LinearLayout
         android:layout_width="wrap_content"
@@ -79,6 +79,7 @@
                             android:layout_margin="10dp"
                             android:text="Contact 1"
                             android:textSize="15dp"
+                            android:layout_centerInParent="true"
                             android:layout_below="@+id/g1im1"/>
 
                     </RelativeLayout>
@@ -119,6 +120,7 @@
                             android:layout_margin="10dp"
                             android:text="Contact 1"
                             android:textSize="15dp"
+                            android:layout_centerInParent="true"
                             android:layout_below="@+id/g1im2"/>
 
                     </RelativeLayout>
@@ -158,6 +160,7 @@
                             android:layout_margin="10dp"
                             android:text="Contact 1"
                             android:textSize="15dp"
+                            android:layout_centerInParent="true"
                             android:layout_below="@+id/g1im3"/>
 
                     </RelativeLayout>
