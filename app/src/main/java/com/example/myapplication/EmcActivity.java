@@ -171,5 +171,10 @@ public class EmcActivity extends AppCompatActivity {
 
         return valid;
     }
+    //back button
+    public void onBackPressed(){
+        Intent i=new Intent(EmcActivity.this,EditActivity.class);
+        startActivity(i);
+    }
 
 }

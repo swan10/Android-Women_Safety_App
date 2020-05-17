@@ -13,6 +13,7 @@ import android.widget.Switch;
 import android.widget.Toast;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.android.material.snackbar.Snackbar;
 
 public class HomeActivity extends AppCompatActivity {
 
@@ -66,5 +67,13 @@ public class HomeActivity extends AppCompatActivity {
                 }
             }
         });
+    }
+
+    //back press activity
+
+    //back button
+    public void onBackPressed(){
+        Snackbar snackbar = Snackbar.make(findViewById(android.R.id.content), "Press again to Exit...", Snackbar.LENGTH_LONG);
+        snackbar.show();
     }
 }

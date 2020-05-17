@@ -33,4 +33,10 @@ public class EditActivity extends AppCompatActivity {
             }
         });
     }
+
+    //back button
+    public void onBackPressed(){
+        Intent i=new Intent(EditActivity.this,Setting.class);
+        startActivity(i);
+    }
 }
