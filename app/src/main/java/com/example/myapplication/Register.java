@@ -141,4 +141,10 @@ public class Register extends AppCompatActivity {
 
         return valid;
     }
+
+    //back button
+    public void onBackPressed(){
+        Intent i=new Intent(Register.this,Login.class);
+        startActivity(i);
+    }
 }

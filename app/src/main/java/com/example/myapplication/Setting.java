@@ -101,4 +101,10 @@ public class Setting extends AppCompatActivity {
             }
         });
     }
+
+    //back button
+    public void onBackPressed(){
+        Intent i=new Intent(Setting.this,Menu.class);
+        startActivity(i);
+    }
 }

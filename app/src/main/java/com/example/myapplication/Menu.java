@@ -16,6 +16,7 @@ public class Menu extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menu);
 
+        //bottom navigation
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation);
 
         bottomNavigationView.setSelectedItemId(R.id.menu);
@@ -41,5 +42,11 @@ public class Menu extends AppCompatActivity {
                 return false;
             }
         });
+    }
+
+    //back button
+    public void onBackPressed(){
+        Intent i=new Intent(Menu.this,HomeActivity.class);
+        startActivity(i);
     }
 }
