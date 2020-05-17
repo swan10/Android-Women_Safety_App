@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".EmcActivity"
+    android:background="#E8EAF6">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center_horizontal">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="20dp"
+            android:gravity="center"
+            android:background="#E57373">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Emergency Helplines"
+                android:textSize="25dp"
+                android:textColor="#000000"/>
+        </RelativeLayout>
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+
+                <EditText
+                    android:id="@+id/emc1"
+                    android:layout_width="350dp"
+                    android:layout_height="45dp"
+                    android:background="@drawable/rounded_button"
+                    android:drawableLeft="@drawable/ic_phone_android"
+                    android:layout_centerHorizontal="true"
+                    android:ems="10"
+                    android:maxLength="10"
+                    android:paddingLeft="15dp"
+                    android:layout_marginBottom="15dp"
+                    android:layout_marginTop="25dp"
+                    android:inputType="phone"
+                    android:hint="Police Phone Number"/>
+
+                <EditText
+                    android:id="@+id/emc2"
+                    android:layout_width="350dp"
+                    android:layout_height="45dp"
+                    android:background="@drawable/rounded_button"
+                    android:drawableLeft="@drawable/ic_phone_android"
+                    android:layout_centerHorizontal="true"
+                    android:ems="10"
+                    android:maxLength="10"
+                    android:paddingLeft="15dp"
+                    android:layout_margin="15dp"
+                    android:inputType="phone"
+                    android:layout_below="@+id/emc1"
+                    android:hint="Fire Phone Number"/>
+
+                <EditText
+                    android:id="@+id/emc3"
+                    android:layout_width="350dp"
+                    android:layout_height="45dp"
+                    android:background="@drawable/rounded_button"
+                    android:drawableLeft="@drawable/ic_phone_android"
+                    android:layout_centerHorizontal="true"
+                    android:ems="10"
+                    android:maxLength="10"
+                    android:paddingLeft="15dp"
+                    android:layout_margin="15dp"
+                    android:inputType="phone"
+                    android:layout_below="@+id/emc2"
+                    android:hint="Ambulance Phone Number"/>
+
+                <EditText
+                    android:id="@+id/emc4"
+                    android:layout_width="350dp"
+                    android:layout_height="45dp"
+                    android:background="@drawable/rounded_button"
+                    android:drawableLeft="@drawable/ic_phone_android"
+                    android:layout_centerHorizontal="true"
+                    android:ems="10"
+                    android:maxLength="10"
+                    android:paddingLeft="15dp"
+                    android:layout_margin="15dp"
+                    android:inputType="phone"
+                    android:layout_below="@id/emc3"
+                    android:hint="Doctor Phone Number"/>
+
+                <EditText
+                    android:id="@+id/emc5"
+                    android:layout_width="350dp"
+                    android:layout_height="45dp"
+                    android:background="@drawable/rounded_button"
+                    android:drawableLeft="@drawable/ic_phone_android"
+                    android:layout_centerHorizontal="true"
+                    android:ems="10"
+                    android:maxLength="10"
+                    android:paddingLeft="15dp"
+                    android:layout_margin="15dp"
+                    android:inputType="phone"
+                    android:layout_below="@+id/emc4"
+                    android:hint="Hospital Phone Number"/>
+
+                <EditText
+                    android:id="@+id/emc6"
+                    android:layout_width="350dp"
+                    android:layout_height="45dp"
+                    android:background="@drawable/rounded_button"
+                    android:drawableLeft="@drawable/ic_phone_android"
+                    android:layout_centerHorizontal="true"
+                    android:ems="10"
+                    android:maxLength="10"
+                    android:paddingLeft="15dp"
+                    android:layout_margin="15dp"
+                    android:inputType="phone"
+                    android:layout_below="@id/emc5"
+                    android:hint="Railway Phone Number"/>
+                <EditText
+                    android:id="@+id/emc7"
+                    android:layout_width="350dp"
+                    android:layout_height="45dp"
+                    android:background="@drawable/rounded_button"
+                    android:drawableLeft="@drawable/ic_phone_android"
+                    android:layout_centerHorizontal="true"
+                    android:ems="10"
+                    android:maxLength="10"
+                    android:paddingLeft="15dp"
+                    android:layout_margin="15dp"
+                    android:inputType="phone"
+                    android:layout_below="@id/emc6"
+                    android:hint="National Emergency Number"/>
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Save"
+                    android:background="@drawable/rounded_button"
+                    android:id="@+id/emcb1"
+                    android:layout_below="@id/emc7"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginBottom="10dp"/>
+            </RelativeLayout>
+        </ScrollView>
+    </LinearLayout>
+
+</RelativeLayout>

@@ -1,0 +1,261 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".FavcActivity">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        android:background="#E8EAF6"
+        >
+        <RelativeLayout
+            android:layout_height="match_parent"
+            android:layout_width="match_parent"
+            android:layout_gravity="center"
+            android:padding="20dp"
+            android:background="#E57373"
+            >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Favourite Contacts"
+                android:layout_centerInParent="true"
+                android:textSize="25dp"
+                android:textColor="#000000"/>
+        </RelativeLayout>
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <GridLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#FFEBEE"
+
+                    android:layout_marginTop="10dp"
+                    android:id="@+id/favg2"
+                    >
+                    <RelativeLayout
+                        android:layout_height="wrap_content"
+                        android:layout_width="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginBottom="20dp"
+                        >
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Person1"
+                            android:layout_centerHorizontal="true"
+                            android:textSize="15dp"
+                            android:textColor="#000000"
+                            android:id="@+id/p1tv1"/>
+                        <EditText
+                            android:layout_width="350dp"
+                            android:layout_height="45dp"
+                            android:background="@drawable/rounded_button"
+                            android:drawableLeft="@drawable/ic_person"
+
+                            android:ems="10"
+                            android:maxLength="7"
+                            android:paddingLeft="15dp"
+
+                            android:layout_margin="15dp"
+                            android:inputType="textPersonName"
+                            android:layout_below="@+id/p1tv1"
+                            android:id="@+id/p1ed1"
+                            android:layout_centerHorizontal="true"/>
+
+                        <EditText
+                            android:id="@+id/p1ed2"
+                            android:layout_width="350dp"
+                            android:layout_height="45dp"
+                            android:background="@drawable/rounded_button"
+                            android:drawableLeft="@drawable/ic_phone_android"
+                            android:ems="10"
+                            android:inputType="phone"
+                            android:maxLength="10"
+                            android:paddingLeft="15dp"
+                            android:layout_marginLeft="15dp"
+                            android:layout_marginRight="15dp"
+                            android:layout_below="@+id/p1ed1"
+                            android:layout_centerHorizontal="true"/>
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/ic_search"
+                            android:layout_alignRight="@+id/p1ed1"
+                            />
+
+                    </RelativeLayout>
+                </GridLayout>
+                <GridLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#E8F5E9"
+                    android:layout_below="@+id/favg2"
+                    android:layout_marginTop="10dp"
+                    android:id="@+id/favg3"
+                    >
+                    <RelativeLayout
+                        android:layout_height="wrap_content"
+                        android:layout_width="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginBottom="20dp"
+                        >
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Person2"
+                            android:layout_centerHorizontal="true"
+                            android:textSize="15dp"
+                            android:textColor="#000000"
+                            android:id="@+id/p2tv1"/>
+                        <EditText
+                            android:layout_width="350dp"
+                            android:layout_height="45dp"
+                            android:background="@drawable/rounded_button"
+                            android:drawableLeft="@drawable/ic_person"
+
+                            android:ems="10"
+                            android:maxLength="7"
+                            android:paddingLeft="15dp"
+
+                            android:layout_margin="15dp"
+                            android:inputType="textPersonName"
+                            android:layout_below="@+id/p2tv1"
+                            android:id="@+id/p2ed1"
+                            android:layout_centerHorizontal="true"/>
+
+                        <EditText
+                            android:id="@+id/p2ed2"
+                            android:layout_width="350dp"
+                            android:layout_height="45dp"
+                            android:background="@drawable/rounded_button"
+                            android:drawableLeft="@drawable/ic_phone_android"
+                            android:ems="10"
+                            android:maxLength="10"
+                            android:inputType="phone"
+                            android:paddingLeft="15dp"
+                            android:layout_marginLeft="15dp"
+                            android:layout_marginRight="15dp"
+                            android:layout_below="@+id/p2ed1"
+                            android:layout_centerHorizontal="true"/>
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/ic_search"
+                            android:layout_alignRight="@+id/p2ed1"
+                            />
+
+                    </RelativeLayout>
+                </GridLayout>
+                <GridLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#F3E5F5"
+                    android:layout_below="@+id/favg3"
+                    android:layout_marginTop="10dp"
+                    android:id="@+id/favg4"
+                    >
+                    <RelativeLayout
+                        android:layout_height="wrap_content"
+                        android:layout_width="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginBottom="20dp"
+                        >
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Person3"
+                            android:layout_centerHorizontal="true"
+                            android:textSize="15dp"
+                            android:textColor="#000000"
+                            android:id="@+id/p3tv1"/>
+                        <EditText
+                            android:layout_width="350dp"
+                            android:layout_height="45dp"
+                            android:background="@drawable/rounded_button"
+                            android:drawableLeft="@drawable/ic_person"
+
+                            android:ems="10"
+                            android:maxLength="7"
+                            android:paddingLeft="15dp"
+
+                            android:layout_margin="15dp"
+                            android:inputType="textPersonName"
+                            android:layout_below="@+id/p3tv1"
+                            android:id="@+id/p3ed1"
+                            android:layout_centerHorizontal="true"/>
+
+                        <EditText
+                            android:id="@+id/p3ed2"
+                            android:layout_width="350dp"
+                            android:layout_height="45dp"
+                            android:background="@drawable/rounded_button"
+                            android:drawableLeft="@drawable/ic_phone_android"
+                            android:ems="10"
+                            android:maxLength="10"
+                            android:inputType="phone"
+                            android:paddingLeft="15dp"
+                            android:layout_marginLeft="15dp"
+                            android:layout_marginRight="15dp"
+                            android:layout_below="@+id/p3ed1"
+                            android:layout_centerHorizontal="true"/>
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/ic_search"
+                            android:layout_alignRight="@+id/p3ed1"
+                            />
+
+                    </RelativeLayout>
+                </GridLayout>
+                <GridLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+
+                    android:layout_below="@+id/favg4"
+                    android:layout_marginTop="10dp"
+
+                    >
+                    <RelativeLayout
+                        android:layout_height="match_parent"
+                        android:layout_width="match_parent"
+
+                        android:layout_marginTop="20dp"
+                        android:layout_marginBottom="20dp"
+                        >
+                        <Button
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Save"
+                            android:textAllCaps="true"
+                            android:background="@drawable/rounded_button"
+                            android:layout_centerInParent="true"
+                            android:gravity="center"
+                            android:textSize="25dp"
+                            android:textColor="#000000"
+                            />
+                    </RelativeLayout>
+                </GridLayout>
+
+            </RelativeLayout>
+        </ScrollView>
+
+    </LinearLayout>
+
+</RelativeLayout>

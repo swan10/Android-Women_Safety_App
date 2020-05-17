@@ -9,7 +9,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ProfileActivity"></activity>
+        <activity android:name=".EditInfo"></activity>
+        <activity android:name=".EditSetting" />
+        <activity android:name=".EmcActivity" />
+        <activity android:name=".FavcActivity" />
+        <activity android:name=".EditActivity" />
+        <activity android:name=".ProfileActivity" />
         <activity android:name=".HomeActivity" />
         <activity android:name=".Setting" />
         <activity android:name=".Menu" />

@@ -16,7 +16,7 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 public class Setting extends AppCompatActivity {
     DatabaseHelper myDb;
     private TextView name;
-    RelativeLayout r1;
+    RelativeLayout r1,sr1,sr2,sr3;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,7 +24,8 @@ public class Setting extends AppCompatActivity {
         setContentView(R.layout.activity_settings);
         myDb=new DatabaseHelper(this);
         name=findViewById(R.id.sname);
-//profile
+
+        //profile
         Cursor cursor=myDb.getAllData();
         StringBuilder stringBuilder=new StringBuilder();
         while (cursor.moveToNext()){
@@ -41,8 +42,38 @@ public class Setting extends AppCompatActivity {
             }
         });
 
+        //edit
+        sr1=findViewById(R.id.sr1);
+        sr1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i=new Intent(Setting.this,EditActivity.class);
+                startActivity(i);
+            }
+        });
 
-//bottom navigation
+        //setting
+        sr2=findViewById(R.id.sr2);
+        sr2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i=new Intent(Setting.this,EditSetting.class);
+                startActivity(i);
+            }
+        });
+
+        //info
+        sr3=findViewById(R.id.sr3);
+        sr3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i=new Intent(Setting.this,EditInfo.class);
+                startActivity(i);
+            }
+        });
+
+
+        //bottom navigation
         BottomNavigationView bottomNavigationView=findViewById(R.id.bottom_navigation);
 
         bottomNavigationView.setSelectedItemId(R.id.settings);
