@@ -17,6 +17,9 @@ import com.google.android.material.snackbar.Snackbar;
 
 public class HomeActivity extends AppCompatActivity {
 
+    private long backPressedTime;
+    private Snackbar snackbar;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -70,10 +73,19 @@ public class HomeActivity extends AppCompatActivity {
     }
 
     //back press activity
+    public void onBackPressed() {
+        if (backPressedTime + 2000 > System.currentTimeMillis()) {
+            finish();
+            this.finishAffinity();
+            //System.exit(1);
 
-    //back button
-    public void onBackPressed(){
-        Snackbar snackbar = Snackbar.make(findViewById(android.R.id.content), "Press again to Exit...", Snackbar.LENGTH_LONG);
-        snackbar.show();
+
+        } else {
+            Snackbar snackbar = Snackbar.make(findViewById(android.R.id.content), "Press again to Exit...", Snackbar.LENGTH_LONG);
+            snackbar.show();
+        }
+        backPressedTime = System.currentTimeMillis();
     }
+
+
 }

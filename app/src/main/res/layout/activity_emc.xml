@@ -30,6 +30,13 @@
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Police Phone Number"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginTop="25dp"
+                    android:id="@+id/he1"/>
 
 
                 <EditText
@@ -43,11 +50,18 @@
                     android:maxLength="10"
                     android:paddingLeft="15dp"
                     android:layout_marginBottom="15dp"
-                    android:layout_marginTop="25dp"
-                    android:layout_marginLeft="15dp"
-                    android:layout_marginRight="15dp"
+                    android:layout_margin="5dp"
                     android:inputType="phone"
-                    android:hint="Police Phone Number"/>
+                    android:hint="Police Phone Number"
+                    android:layout_below="@+id/he1"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Fire Phone Number"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginTop="25dp"
+                    android:id="@+id/he2"
+                    android:layout_below="@id/emc1"/>
 
                 <EditText
                     android:id="@+id/emc2"
@@ -59,10 +73,18 @@
                     android:ems="10"
                     android:maxLength="10"
                     android:paddingLeft="15dp"
-                    android:layout_margin="15dp"
+                    android:layout_margin="5dp"
                     android:inputType="phone"
-                    android:layout_below="@+id/emc1"
+                    android:layout_below="@+id/he2"
                     android:hint="Fire Phone Number"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Ambulance Phone Number"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginTop="25dp"
+                    android:id="@+id/he3"
+                    android:layout_below="@id/emc2"/>
 
                 <EditText
                     android:id="@+id/emc3"
@@ -74,10 +96,18 @@
                     android:ems="10"
                     android:maxLength="10"
                     android:paddingLeft="15dp"
-                    android:layout_margin="15dp"
+                    android:layout_margin="5dp"
                     android:inputType="phone"
-                    android:layout_below="@+id/emc2"
+                    android:layout_below="@+id/he3"
                     android:hint="Ambulance Phone Number"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Doctor Phone Number"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginTop="25dp"
+                    android:id="@+id/he4"
+                    android:layout_below="@id/emc3"/>
 
                 <EditText
                     android:id="@+id/emc4"
@@ -89,10 +119,18 @@
                     android:ems="10"
                     android:maxLength="10"
                     android:paddingLeft="15dp"
-                    android:layout_margin="15dp"
+                    android:layout_margin="5dp"
                     android:inputType="phone"
-                    android:layout_below="@id/emc3"
+                    android:layout_below="@id/he4"
                     android:hint="Doctor Phone Number"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Hospital Phone Number"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginTop="25dp"
+                    android:id="@+id/he5"
+                    android:layout_below="@id/emc4"/>
 
                 <EditText
                     android:id="@+id/emc5"
@@ -104,10 +142,18 @@
                     android:ems="10"
                     android:maxLength="10"
                     android:paddingLeft="15dp"
-                    android:layout_margin="15dp"
+                    android:layout_margin="5dp"
                     android:inputType="phone"
-                    android:layout_below="@+id/emc4"
+                    android:layout_below="@+id/he5"
                     android:hint="Hospital Phone Number"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Railway Phone Number"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginTop="25dp"
+                    android:id="@+id/he6"
+                    android:layout_below="@id/emc5"/>
 
                 <EditText
                     android:id="@+id/emc6"
@@ -119,10 +165,20 @@
                     android:ems="10"
                     android:maxLength="10"
                     android:paddingLeft="15dp"
-                    android:layout_margin="15dp"
+                    android:layout_margin="5dp"
                     android:inputType="phone"
-                    android:layout_below="@id/emc5"
+                    android:layout_below="@id/he6"
                     android:hint="Railway Phone Number"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="National Emergency Number"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginTop="25dp"
+                    android:id="@+id/he7"
+                    android:layout_below="@id/emc6"/>
+
                 <EditText
                     android:id="@+id/emc7"
                     android:layout_width="350dp"
@@ -133,9 +189,9 @@
                     android:ems="10"
                     android:maxLength="10"
                     android:paddingLeft="15dp"
-                    android:layout_margin="15dp"
+                    android:layout_margin="5dp"
                     android:inputType="phone"
-                    android:layout_below="@id/emc6"
+                    android:layout_below="@id/he7"
                     android:hint="National Emergency Number"/>
                 <Button
                     android:layout_width="wrap_content"
