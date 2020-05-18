@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/c21"
+        android:title="Call"/>
+    <item
+        android:id="@+id/c22"
+        android:title="SMS"/>
+    <item
+        android:id="@+id/c23"
+        android:title="Share Location"/>
+</menu>

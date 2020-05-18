@@ -3,6 +3,7 @@
     package="com.example.myapplication">
     <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
     <uses-permission android:name="android.permission.CALL_PHONE"/>
+    <uses-permission android:name="android.permission.SEND_SMS"/>
 
     <application
         android:allowBackup="true"
@@ -11,6 +12,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".custom_sms"/>
         <activity android:name=".EditInfo"></activity>
         <activity android:name=".EditSetting" />
         <activity android:name=".EmcActivity" />

@@ -56,6 +56,7 @@ public class Emergency extends SQLiteOpenHelper {
     }
 
     //retrieve
+    //used in edit UI for fetching all the data
     public Cursor getAllData() {
         SQLiteDatabase db = this.getWritableDatabase();
         Cursor cursor = db.rawQuery("SELECT * FROM "+TABLE_NAME+" WHERE ID = (SELECT MAX(ID) FROM "+TABLE_NAME+")",null);
@@ -63,6 +64,7 @@ public class Emergency extends SQLiteOpenHelper {
     }
 
     //fetch exact data
+    //used in menu UI for call emergency
     public String getData(String s) {
         SQLiteDatabase db = this.getWritableDatabase();
         Cursor res = db.rawQuery("SELECT * FROM "+TABLE_NAME+" WHERE ID = (SELECT MAX(ID) FROM "+TABLE_NAME+")",null);

@@ -6,142 +6,7 @@
     android:layout_height="match_parent"
     android:background="#C8E6C9"
     tools:context=".MainActivity">
-    <HorizontalScrollView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
-        <GridLayout
-            android:id="@+id/g1"
 
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:columnCount="3"
-            android:rowCount="1"
-
-            android:alignmentMode="alignMargins"
-
-            android:layout_marginTop="10dp">
-
-            <androidx.cardview.widget.CardView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-
-                android:layout_margin="15dp"
-                app:cardCornerRadius="20dp"
-                app:cardElevation="6dp">
-
-                <RelativeLayout
-
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-
-                    android:orientation="vertical"
-                    android:padding="16dp"
-                    android:background="#E57373">
-
-                    <ImageView
-                        android:layout_width="80dp"
-                        android:layout_height="80dp"
-                        android:src="@drawable/ic_person"
-                        android:id="@+id/g1im1"
-                        android:layout_alignParentLeft="true"/>
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:id="@+id/g1tv1"
-                        android:layout_margin="10dp"
-                        android:text="Contact 1"
-                        android:textSize="15dp"
-                        android:layout_centerInParent="true"
-                        android:layout_below="@+id/g1im1"/>
-
-                </RelativeLayout>
-
-            </androidx.cardview.widget.CardView>
-            <androidx.cardview.widget.CardView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-
-                android:layout_margin="15dp"
-                android:layout_marginTop="15dp"
-                android:layout_marginLeft="5dp"
-                app:cardCornerRadius="20dp"
-                app:cardElevation="6dp"
-                android:id="@+id/c2">
-
-                <RelativeLayout
-
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-
-                    android:orientation="vertical"
-                    android:padding="16dp"
-                    android:background="#D1C4E9"
-                    >
-
-                    <ImageView
-                        android:layout_width="80dp"
-                        android:layout_height="80dp"
-                        android:src="@drawable/ic_person"
-                        android:id="@+id/g1im2"
-                        android:layout_alignParentLeft="true"/>
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:id="@+id/g1tv2"
-                        android:layout_margin="10dp"
-                        android:text="Contact 1"
-                        android:textSize="15dp"
-                        android:layout_centerInParent="true"
-                        android:layout_below="@+id/g1im2"/>
-
-                </RelativeLayout>
-
-            </androidx.cardview.widget.CardView>
-            <androidx.cardview.widget.CardView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-
-
-                android:layout_margin="15dp"
-                android:layout_marginTop="15dp"
-                android:layout_marginLeft="5dp"
-                app:cardCornerRadius="20dp"
-                app:cardElevation="6dp">
-
-                <RelativeLayout
-
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-
-                    android:orientation="vertical"
-                    android:padding="16dp"
-                    android:background="#E57373">
-
-                    <ImageView
-                        android:layout_width="80dp"
-                        android:layout_height="80dp"
-                        android:src="@drawable/ic_person"
-                        android:id="@+id/g1im3"
-                        android:layout_alignParentLeft="true"/>
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:id="@+id/g1tv3"
-                        android:layout_margin="10dp"
-                        android:text="Contact 1"
-                        android:textSize="15dp"
-                        android:layout_centerInParent="true"
-                        android:layout_below="@+id/g1im3"/>
-
-                </RelativeLayout>
-
-            </androidx.cardview.widget.CardView>
-
-        </GridLayout>
-    </HorizontalScrollView>
     <Button
         android:id="@+id/custom_button"
         android:layout_width="241dp"
@@ -154,6 +19,7 @@
 
         android:layout_marginRight="60dp"
         android:layout_centerInParent="true"
+        android:gravity="center"
         android:background="@drawable/custom_button" />
 
 

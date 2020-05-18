@@ -8,12 +8,14 @@ import android.database.Cursor;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.PopupMenu;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
-public class Setting extends AppCompatActivity {
+public class Setting extends AppCompatActivity implements PopupMenu.OnMenuItemClickListener{
     DatabaseHelper myDb;
     private TextView name;
     RelativeLayout r1,sr1,sr2,sr3;
@@ -106,5 +108,28 @@ public class Setting extends AppCompatActivity {
     public void onBackPressed(){
         Intent i=new Intent(Setting.this,Menu.class);
         startActivity(i);
+    }
+
+
+    //logout exit popup
+    public void showExit(View v){
+        PopupMenu popup=new PopupMenu(this,v);
+        popup.setOnMenuItemClickListener(this);
+        popup.inflate(R.menu.popup_exit);
+        popup.show();
+    }
+
+    @Override
+    public boolean onMenuItemClick(MenuItem item) {
+        switch (item.getItemId()){
+            case R.id.item1:
+                Toast.makeText(this, "Item 1 clicked", Toast.LENGTH_SHORT).show();
+                return true;
+            case R.id.item2:
+                Toast.makeText(this, "Item 2 clicked", Toast.LENGTH_SHORT).show();
+                return true;
+            default:
+                return false;
+        }
     }
 }

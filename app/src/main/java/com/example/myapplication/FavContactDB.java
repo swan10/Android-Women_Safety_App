@@ -51,11 +51,28 @@ public class FavContactDB extends SQLiteOpenHelper {
         else
             return true;
     }
-    //retrieve
+    //retrieve all
     public Cursor getAllData() {
         SQLiteDatabase db = this.getWritableDatabase();
         Cursor cursor = db.rawQuery("SELECT * FROM "+TABLE_NAME+" WHERE ID = (SELECT MAX(ID) FROM "+TABLE_NAME+")",null);
         return cursor;
+    }
+
+    //fetch exact data
+    //used in menu UI for call emergency
+    public String getData(String s) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        Cursor res = db.rawQuery("SELECT * FROM "+TABLE_NAME+" WHERE ID = (SELECT MAX(ID) FROM "+TABLE_NAME+")",null);
+        StringBuffer buffer= new StringBuffer();
+        while (res.moveToNext())
+        {
+
+            String name =res.getString(res.getColumnIndex(s));
+
+            buffer.append(name);
+        }
+        return buffer.toString();
+
     }
 
 }

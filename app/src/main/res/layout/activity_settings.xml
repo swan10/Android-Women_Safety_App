@@ -75,7 +75,7 @@
                         <ImageView
                             android:layout_width="100dp"
                             android:layout_height="100dp"
-                            android:src="@drawable/ic_edit"
+                            android:src="@drawable/icons_edit"
                             android:id="@+id/sim1"/>
                         <TextView
                             android:layout_width="wrap_content"
@@ -102,7 +102,7 @@
                         <ImageView
                             android:layout_width="100dp"
                             android:layout_height="100dp"
-                            android:src="@drawable/ic_settings"
+                            android:src="@drawable/icons_settings"
                             android:id="@+id/sim2"/>
                         <TextView
                             android:layout_width="wrap_content"
@@ -129,7 +129,7 @@
                         <ImageView
                             android:layout_width="100dp"
                             android:layout_height="100dp"
-                            android:src="@drawable/ic_info"
+                            android:src="@drawable/icons_information"
                             android:id="@+id/sim3"/>
                         <TextView
                             android:layout_width="wrap_content"
@@ -151,11 +151,13 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:padding="12dp"
-                        android:background="#ffff">
+                        android:background="#ffff"
+                        android:id="@+id/sr4"
+                        android:onClick="showExit">
                         <ImageView
                             android:layout_width="100dp"
                             android:layout_height="100dp"
-                            android:src="@drawable/ic_exit_to_app"
+                            android:src="@drawable/icons8_exit"
                             android:id="@+id/sim4"/>
                         <TextView
                             android:layout_width="wrap_content"
