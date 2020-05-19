@@ -61,4 +61,21 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         Cursor cursor = db.rawQuery("select * from "+TABLE_NAME,null);
         return cursor;
     }
+
+    //fetch exact data
+    //used in menu UI for call emergency
+    public String getData(String s) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        Cursor res = db.rawQuery("SELECT * FROM "+TABLE_NAME+" WHERE ID = (SELECT MAX(ID) FROM "+TABLE_NAME+")",null);
+        StringBuffer buffer= new StringBuffer();
+        while (res.moveToNext())
+        {
+
+            String name =res.getString(res.getColumnIndex(s));
+
+            buffer.append(name);
+        }
+        return buffer.toString();
+
+    }
 }

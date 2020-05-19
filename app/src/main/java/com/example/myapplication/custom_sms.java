@@ -136,12 +136,7 @@ public class custom_sms extends AppCompatActivity {
             }
             return;
         }
-        try{
-            locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 0, 0, listener);
-        }
-        catch (Exception e){
-            locationManager.requestLocationUpdates(LocationManager.NETWORK_PROVIDER, 0, 0, listener);
-        }
+        locationManager.requestLocationUpdates(LocationManager.NETWORK_PROVIDER, 0, 0, listener);
     }
 
     //send sms
