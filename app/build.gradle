@@ -39,4 +39,5 @@ dependencies {
     implementation 'net.colindodd:gradientlayout:1.2'
     implementation 'pub.devrel:easypermissions:3.0.0'
     implementation 'com.jakewharton:process-phoenix:2.0.0'
+    implementation 'com.karumi:dexter:6.1.2'
 }

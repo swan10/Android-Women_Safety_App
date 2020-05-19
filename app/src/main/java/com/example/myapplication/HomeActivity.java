@@ -60,7 +60,7 @@ public class HomeActivity extends AppCompatActivity {
         fDb = new FavContactDB(this);
         myDb=new DatabaseHelper(this);
         custom_stop=findViewById(R.id.custom_stop);
-
+        RequestMultiplePermission();
 
         //custom stop
 
@@ -286,10 +286,10 @@ public class HomeActivity extends AppCompatActivity {
 
                     if (CallPermission && PhonePermission && SMSPermission && FineLocationPermission && CoarseLocationPermission && InternetPermission) {
 
-                        Snackbar snackbar = Snackbar.make(findViewById(android.R.id.content), "Permission granted....", Snackbar.LENGTH_LONG);
+                        Snackbar snackbar = Snackbar.make(findViewById(android.R.id.content), "Permission granted....", Snackbar.LENGTH_SHORT);
                         snackbar.show();                    }
                     else {
-                        Snackbar snackbar = Snackbar.make(findViewById(android.R.id.content), "Permission denied....", Snackbar.LENGTH_LONG);
+                        Snackbar snackbar = Snackbar.make(findViewById(android.R.id.content), "Permission denied....", Snackbar.LENGTH_SHORT);
                         snackbar.show();                    }
                 }
 
