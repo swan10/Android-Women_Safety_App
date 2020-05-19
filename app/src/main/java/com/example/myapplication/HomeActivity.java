@@ -7,6 +7,7 @@ import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 
 import android.Manifest;
+import android.annotation.SuppressLint;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
@@ -23,12 +24,15 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CompoundButton;
+import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.snackbar.Snackbar;
+import com.jakewharton.processphoenix.ProcessPhoenix;
 
 import static android.Manifest.permission.ACCESS_COARSE_LOCATION;
 import static android.Manifest.permission.ACCESS_FINE_LOCATION;
@@ -44,8 +48,10 @@ public class HomeActivity extends AppCompatActivity {
     private LocationManager locationManager;
     private LocationListener listener;
     FavContactDB fDb;
-    public static final String[] s = {"PC1", "PC2", "PC3","name"};
+    public static final String[] s = {"PC1", "PC2", "PC3","NAME"};
     DatabaseHelper myDb;
+    ImageView custom_stop;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,6 +59,13 @@ public class HomeActivity extends AppCompatActivity {
         setContentView(R.layout.activity_home);
         fDb = new FavContactDB(this);
         myDb=new DatabaseHelper(this);
+        custom_stop=findViewById(R.id.custom_stop);
+
+
+        //custom stop
+
+
+
 
         //bottom navigation
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation);
@@ -88,7 +101,8 @@ public class HomeActivity extends AppCompatActivity {
         customButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                customButton.setVisibility(View.INVISIBLE);
+                custom_stop.setVisibility(View.VISIBLE);
                 // Adding if condition inside button.
 
                 // If All permission is enabled successfully then this block will execute.
@@ -124,8 +138,6 @@ public class HomeActivity extends AppCompatActivity {
                 if (isChecked) {
                     customButton.setEnabled(true);
                 } else {
-                    //stopping the function
-
                     customButton.setEnabled(false);
                 }
             }
@@ -138,7 +150,8 @@ public class HomeActivity extends AppCompatActivity {
         listener = new LocationListener() {
             @Override
             public void onLocationChanged(Location location) {
-                String loc = myDb.getData(s[3])+" is in great Danger.\nPlease Help!!!\nhttp://maps.google.com/maps?saddr=" + location.getLatitude()+","+location.getLongitude();
+                String m=myDb.getData(s[3]);
+                String loc = m+" is in great Danger.\nPlease Help!!!\nhttp://maps.google.com/maps?saddr=" + location.getLatitude()+","+location.getLongitude();
                 fetchContact(loc);
             }
 
@@ -302,4 +315,9 @@ public class HomeActivity extends AppCompatActivity {
                 SixthPermissionResult == PackageManager.PERMISSION_GRANTED ;
     }
 
+    public void custom_Exit(View view) {
+
+            ProcessPhoenix.triggerRebirth(HomeActivity.this);
+
+    }
 }

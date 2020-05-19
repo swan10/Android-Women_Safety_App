@@ -107,7 +107,9 @@ public class Setting extends AppCompatActivity implements PopupMenu.OnMenuItemCl
     //back button
     public void onBackPressed(){
         Intent i=new Intent(Setting.this,Menu.class);
+        overridePendingTransition(0, 0);
         startActivity(i);
+        overridePendingTransition(0, 0);
     }
 
 

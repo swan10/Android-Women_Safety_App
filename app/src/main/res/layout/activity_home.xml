@@ -27,7 +27,7 @@
         android:id="@+id/custom_switch"
         android:layout_width="113dp"
         android:layout_height="38dp"
-        android:layout_below="@+id/custom_button"
+        android:layout_above="@+id/custom_button"
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
 
@@ -40,6 +40,17 @@
         android:textSize="20dp"
 
         android:layout_centerHorizontal="true"/>
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/icons_stop"
+        android:layout_below="@+id/custom_button"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="10dp"
+        android:background="@drawable/rounded_button"
+        android:visibility="invisible"
+        android:id="@+id/custom_stop"
+        android:onClick="custom_Exit"/>
 
 
 
