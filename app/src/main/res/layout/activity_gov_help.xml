@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Gov_help_call"
+    android:background="#E8EAF6">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:orientation="vertical"
+        android:id="@+id/gh1">
+
+        <EditText
+            android:id="@+id/editTextPhone"
+            android:layout_width="350dp"
+            android:layout_height="45dp"
+            android:layout_gravity="center"
+            android:ems="10"
+            android:maxLength="10"
+            android:paddingLeft="30dp"
+            android:inputType="phone"
+            android:background="@drawable/rounded_button"
+            android:layout_marginTop="30dp"
+            android:layout_marginBottom="20dp"/>
+        <ImageView
+            android:id="@+id/call"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:src="@drawable/ic_call"
+            android:layout_gravity="center"
+            android:layout_marginBottom="20dp"/>
+
+    </LinearLayout>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/gh1">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:textSize="16sp"
+            android:textAllCaps="false"
+            android:padding="16sp"
+            android:text="@string/help"/>
+
+    </ScrollView>
+
+</RelativeLayout>

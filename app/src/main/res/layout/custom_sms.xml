@@ -4,85 +4,93 @@
     android:layout_height="match_parent"
     android:background="#E8EAF6">
 
-    <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/icons_sms"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="50dp"
-        android:layout_marginBottom="20dp"
-        android:padding="5dp"
-        android:id="@+id/cs1"/>
-    <EditText
-        android:layout_width="250sp"
-        android:layout_height="50dp"
-        android:layout_below="@+id/cs1"
-        android:layout_marginTop="25dp"
-        android:maxLength="10"
-        android:hint="Phone Number"
-        android:inputType="phone"
-        android:paddingLeft="20dp"
-        android:drawableLeft="@drawable/ic_phone_android"
-        android:layout_centerHorizontal="true"
-        android:background="@drawable/rounded_button"
-        android:id="@+id/cs2"/>
-    <EditText
-        android:layout_width="350dp"
-        android:layout_height="150dp"
-        android:layout_below="@+id/cs2"
-        android:layout_marginTop="25dp"
-        android:maxLength="100"
-        android:paddingLeft="20dp"
-        android:hint="SMS body (100 words)"
-        android:layout_centerHorizontal="true"
-        android:background="@drawable/rounded_button"
-        android:id="@+id/cs3"/>
-    <RelativeLayout
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/cs3"
-        android:id="@+id/cr1">
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentRight="true"
-            android:drawableLeft="@drawable/icons_address"
-            android:background="@drawable/rounded_button"
-            android:padding="10dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginRight="25dp"
-            android:text="Add GPS Location"
-            android:textAllCaps="false"
-            android:id="@+id/csgps"/>
-    </RelativeLayout>
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_below="@id/cr1"
-        android:id="@+id/cr2">
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/cs4"
+        android:layout_height="match_parent">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/icons_sms"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="50dp"
+                android:layout_marginBottom="20dp"
+                android:padding="5dp"
+                android:id="@+id/cs1"/>
+            <EditText
+                android:layout_width="250sp"
+                android:layout_height="50dp"
+                android:layout_below="@+id/cs1"
+                android:layout_marginTop="25dp"
+                android:maxLength="10"
+                android:hint="Phone Number"
+                android:inputType="phone"
+                android:paddingLeft="20dp"
+                android:drawableLeft="@drawable/ic_phone_android"
+                android:layout_centerHorizontal="true"
+                android:background="@drawable/rounded_button"
+                android:id="@+id/cs2"/>
+            <EditText
+                android:layout_width="350dp"
+                android:layout_height="150dp"
+                android:layout_below="@+id/cs2"
+                android:layout_marginTop="25dp"
+                android:maxLength="100"
+                android:paddingLeft="20dp"
+                android:hint="SMS body (100 words)"
+                android:layout_centerHorizontal="true"
+                android:background="@drawable/rounded_button"
+                android:id="@+id/cs3"/>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/cs3"
+                android:id="@+id/cr1">
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:drawableLeft="@drawable/icons_address"
+                    android:background="@drawable/rounded_button"
+                    android:padding="10dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginRight="25dp"
+                    android:text="Add GPS Location"
+                    android:textAllCaps="false"
+                    android:id="@+id/csgps"/>
+            </RelativeLayout>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@id/cr1"
+                android:id="@+id/cr2">
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/cs4"
 
-            android:layout_marginTop="25dp"
-            android:layout_marginLeft="25dp"
-            android:background="@drawable/icons_cancel1"
+                    android:layout_marginTop="25dp"
+                    android:layout_marginLeft="25dp"
+                    android:background="@drawable/icons_cancel1"
 
-            android:layout_alignParentLeft="true"
-            android:textAllCaps="false"/>
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/cs5"
+                    android:layout_alignParentLeft="true"
+                    android:textAllCaps="false"/>
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/cs5"
 
-            android:layout_marginTop="25dp"
-            android:layout_marginRight="25dp"
-            android:background="@drawable/icons_email_send"
+                    android:layout_marginTop="25dp"
+                    android:layout_marginRight="25dp"
+                    android:background="@drawable/icons_email_send"
 
-            android:layout_alignParentRight="true"
-            android:textAllCaps="false"/>
-    </RelativeLayout>
+                    android:layout_alignParentRight="true"
+                    android:textAllCaps="false"/>
+            </RelativeLayout>
+        </RelativeLayout>
+    </ScrollView>
 
 
 

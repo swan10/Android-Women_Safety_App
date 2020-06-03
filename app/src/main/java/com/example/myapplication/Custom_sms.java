@@ -21,7 +21,7 @@ import androidx.core.app.ActivityCompat;
 
 import com.google.android.material.snackbar.Snackbar;
 
-public class custom_sms extends AppCompatActivity {
+public class Custom_sms extends AppCompatActivity {
     EditText cs2,cs3;
     Button cs4,cs5,csgps;
     private LocationManager locationManager;
@@ -49,7 +49,7 @@ public class custom_sms extends AppCompatActivity {
         cs4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i=new Intent(custom_sms.this,Menu.class);
+                Intent i=new Intent(Custom_sms.this,Menu.class);
                 startActivity(i);
             }
         });
@@ -105,11 +105,7 @@ public class custom_sms extends AppCompatActivity {
             }
         };
     }
-    //back button
-    public void onBackPressed(){
-        Intent i=new Intent(custom_sms.this,Menu.class);
-        startActivity(i);
-    }
+
     //alert message for phone number null validation
     public void aletDailog(){
         AlertDialog.Builder builder = new AlertDialog.Builder(this);

@@ -38,7 +38,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center">
             <GridLayout
-                android:id="@+id/g1"
+                android:id="@+id/grid1"
 
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -223,7 +223,7 @@
                 android:layout_marginTop="10dp">
 
                 <GridLayout
-                    android:id="@+id/g2"
+                    android:id="@+id/g1"
 
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -274,7 +274,7 @@
                     </androidx.cardview.widget.CardView>
                 </GridLayout>
                 <GridLayout
-                    android:id="@+id/g3"
+                    android:id="@+id/g2"
 
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -324,7 +324,7 @@
                     </androidx.cardview.widget.CardView>
                 </GridLayout>
                 <GridLayout
-                    android:id="@+id/g4"
+                    android:id="@+id/g3"
 
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -374,7 +374,7 @@
                     </androidx.cardview.widget.CardView>
                 </GridLayout>
                 <GridLayout
-                    android:id="@+id/g5"
+                    android:id="@+id/g4"
 
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -424,7 +424,7 @@
                     </androidx.cardview.widget.CardView>
                 </GridLayout>
                 <GridLayout
-                    android:id="@+id/g6"
+                    android:id="@+id/g5"
 
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -474,7 +474,7 @@
                     </androidx.cardview.widget.CardView>
                 </GridLayout>
                 <GridLayout
-                    android:id="@+id/g7"
+                    android:id="@+id/g6"
 
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -524,7 +524,7 @@
                     </androidx.cardview.widget.CardView>
                 </GridLayout>
                 <GridLayout
-                    android:id="@+id/g8"
+                    android:id="@+id/g7"
 
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -587,7 +587,7 @@
                     </androidx.cardview.widget.CardView>
                 </GridLayout>
                 <GridLayout
-                    android:id="@+id/g9"
+                    android:id="@+id/g8"
 
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"

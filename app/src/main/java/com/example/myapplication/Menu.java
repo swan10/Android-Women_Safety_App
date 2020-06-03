@@ -45,14 +45,14 @@ public class Menu extends AppCompatActivity implements PopupMenu.OnMenuItemClick
         eDb=new Emergency(this);
         fDb=new FavContactDB(this);
 
-        g1=findViewById(R.id.g2);
-        g2=findViewById(R.id.g3);
-        g3=findViewById(R.id.g4);
-        g4=findViewById(R.id.g5);
-        g5=findViewById(R.id.g6);
-        g6=findViewById(R.id.g7);
-        g7=findViewById(R.id.g8);
-        g8=findViewById(R.id.g9);
+        g1=findViewById(R.id.g1);
+        g2=findViewById(R.id.g2);
+        g3=findViewById(R.id.g3);
+        g4=findViewById(R.id.g4);
+        g5=findViewById(R.id.g5);
+        g6=findViewById(R.id.g6);
+        g7=findViewById(R.id.g7);
+        g8=findViewById(R.id.g8);
 
         im1=findViewById(R.id.im1);
         im2=findViewById(R.id.im2);
@@ -199,6 +199,14 @@ public class Menu extends AppCompatActivity implements PopupMenu.OnMenuItemClick
                 }else{
                     makePhCall(res);
                 }
+            }
+        });
+        //g8
+        g8.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i=new Intent(Menu.this, Gov_help_call.class);
+                startActivity(i);
             }
         });
 
@@ -366,7 +374,7 @@ public class Menu extends AppCompatActivity implements PopupMenu.OnMenuItemClick
     //sending sms to intent
 
     public void makeSms(String s){
-        Intent intent=new Intent(Menu.this,custom_sms.class);
+        Intent intent=new Intent(Menu.this, Custom_sms.class);
         intent.putExtra("no",s);
         startActivity(intent);
     }

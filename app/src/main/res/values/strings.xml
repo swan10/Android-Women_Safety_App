@@ -6,4 +6,14 @@ Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lo
 Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer</string>
     <string name="about">Build version: 1.0 \n\nCreator: SWAN </string>
     <string name="use">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum</string>
+    <string name="help">Helpline Numbers of States &amp; Union Territories (UTs)\n\n
+    Andhra Pradesh\t\t0866-2410978\nArunachal Pradesh\t\t9436055743\nAssam\t\t6913347770\nBihar\t\t104\nChhattisgarh\t\t104\nGoa\t\t104\nGujrat\t\t104\nHaryana\t\t8558893911\nHimachal Pradesh\t\t104\nJharkhand\t\t104\nKarnataka\t\t104\n
+    Kerala\t\t0471-2552056\nMadhya Pradesh\t\t104\nMaharashtra\t\t020-26127394\nManipur\t\t3852411668\nMeghalaya\t\t108\nMizoram\t\t102\nNagaland\t\t7005539653\nOdisha\t\t9439994859\nPunjab\t\t104\nRajasthan\t\t0141-2225624\nSikkim\t\t104\nTamil Nadu\t\t044-29510500\nTelangana\t\t104\nTripura\t\t0381-2315879\nUttarakhand\t\t104\n
+    Uttar Pradesh\t\t18001805145\nWest Bengal\t\t1800313444222,\t03323412600
+        \n\nAndaman and NicobarIslands\t\t03192-232102\nChandigarah\t\t9779558585\nDadra and Nagar Haveli and Daman &amp; Diu-104\nDelhi\t\t011-22307145\nJammu &amp; Kashmir\t\t01912520982, 0194-2440283\n
+    Ladakh\t\t01982256462\nLakshadweep\t\t104\nPuducherry\t\t104\n\n\n
+    -------Emergency numbers------\n\nNATIONAL EMERGENCY NUMBER-112\nPOLICE-100\nFIRE-101\nAMBULANCE-102\n\n\n
+    AIIMS (For Donation Of Organ) Delhi: 1060\nAir Ambulance-9540161344\nAids Helpline-1097\nAnti Poison New Delhi -1066 or 011-1066\nChildren In Difficult Situation: 1098\nCentral Vigilance Commission: 1964\nDisaster Management Services-108\n
+    Disaster Management N.D.M.A 011-26701728-1078\nEARTHQUAKE / FLOOD / DISASTER N.D.R.F: 011-24363260\nLPG Leak Helpline: 1906\nMissing Child And Women: 1094\nRailway Enquiry: 139\nRailway Accident Emergency Service:1072\n
+    Road Accident Emergency Service:1073\nRelief Commissioner For Natural Calamities: 1070\nSenior Citizen Helpline: 1091/ 1291\nTourist Helpline: 1363 or 1800111363\nWomen Helpline-1091\nWomen Helpline - Domestic Abuse-181\n</string>
 </resources>
