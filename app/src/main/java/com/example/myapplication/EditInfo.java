@@ -24,6 +24,11 @@ public class EditInfo extends AppCompatActivity {
         r2=findViewById(R.id.edi2);
         r3=findViewById(R.id.edi3);
 
+        //back button
+        getSupportActionBar().setTitle("Info");
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+        //bottomsheet behaviour
         View bottomSheet1 = findViewById(R.id.bottom_sheet1);
         bottomSheetBehavior1 = BottomSheetBehavior.from(bottomSheet1);
 

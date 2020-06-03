@@ -27,6 +27,9 @@ public class Setting extends AppCompatActivity implements PopupMenu.OnMenuItemCl
         myDb=new DatabaseHelper(this);
         name=findViewById(R.id.sname);
 
+        //remove action bar
+        getSupportActionBar().hide();
+
         //profile
         Cursor cursor=myDb.getAllData();
         StringBuilder stringBuilder=new StringBuilder();

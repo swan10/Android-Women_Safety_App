@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -18,7 +19,8 @@ public class Login extends AppCompatActivity {
 
     private long backPressedTime;
     private EditText name,pwd;
-    private Button login,login_g,login_f;
+    private Button login;
+    ImageView login_g,login_f,login_t;
     DatabaseHelper myDb;
 
     @Override
@@ -33,6 +35,10 @@ public class Login extends AppCompatActivity {
         login=findViewById(R.id.button_log);
         login_g=findViewById(R.id.button_logg);
         login_f=findViewById(R.id.button_logf);
+        login_t=findViewById(R.id.button_logt);
+
+        //remove action bar
+        getSupportActionBar().hide();
 
         TextView tv_r=findViewById(R.id.textView_logr);
         TextView tv_sk=findViewById(R.id.textView_logsk);
@@ -44,6 +50,12 @@ public class Login extends AppCompatActivity {
             }
         });
         login_f.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(Login.this,"This sevice is not currently activated",Toast.LENGTH_SHORT).show();
+            }
+        });
+        login_t.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Toast.makeText(Login.this,"This sevice is not currently activated",Toast.LENGTH_SHORT).show();

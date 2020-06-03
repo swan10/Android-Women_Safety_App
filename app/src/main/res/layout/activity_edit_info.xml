@@ -11,21 +11,7 @@
         android:orientation="vertical"
         android:gravity="center_horizontal"
         android:background="#E8EAF6">
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:background="#E57373"
-            app:layout_dodgeInsetEdges="bottom">
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text=" Info"
-                android:layout_centerInParent="true"
-                android:textSize="25dp"
-                android:drawableLeft="@drawable/ic_info"
-                android:padding="15dp"/>
-        </RelativeLayout>
+
         <RelativeLayout
             android:id="@+id/edi1"
             android:layout_width="match_parent"
@@ -39,7 +25,7 @@
                 android:text="Self help tips"
                 android:layout_centerInParent="true"
                 android:textSize="25dp"
-
+                android:textColor="#000000"
                 android:padding="15dp"/>
         </RelativeLayout>
         <RelativeLayout
@@ -55,7 +41,7 @@
                 android:text="How to use this App"
                 android:layout_centerInParent="true"
                 android:textSize="25dp"
-
+                android:textColor="#000000"
                 android:padding="15dp"/>
         </RelativeLayout>
         <RelativeLayout
@@ -71,7 +57,7 @@
                 android:text="About"
                 android:layout_centerInParent="true"
                 android:textSize="25dp"
-
+                android:textColor="#000000"
                 android:padding="15dp"/>
         </RelativeLayout>
 

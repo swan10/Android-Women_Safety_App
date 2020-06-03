@@ -16,20 +16,29 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Gov_help_call"></activity>
-        <activity android:name=".Custom_sms" />
-        <activity android:name=".EditInfo" />
-        <activity android:name=".EditSetting" />
-        <activity android:name=".EmcActivity" />
-        <activity android:name=".FavcActivity" />
-        <activity android:name=".EditActivity" />
-        <activity android:name=".ProfileActivity" />
+        <activity
+            android:name=".Gov_help_call"
+            android:parentActivityName=".Menu" />
+        <activity android:name=".Custom_sms"
+            android:parentActivityName=".Menu"/>
+        <activity android:name=".EditInfo"
+            android:parentActivityName=".Setting"/>
+        <activity android:name=".EditSetting"
+            android:parentActivityName=".Setting"/>
+        <activity android:name=".EmcActivity"
+            android:parentActivityName=".EditActivity"/>
+        <activity android:name=".FavcActivity"
+            android:parentActivityName=".EditActivity"/>
+        <activity android:name=".EditActivity"
+            android:parentActivityName=".Setting"/>
+        <activity android:name=".ProfileActivity"
+            android:parentActivityName=".Setting"/>
         <activity android:name=".HomeActivity" />
         <activity android:name=".Setting" />
         <activity android:name=".Menu" />
         <activity android:name=".Register" />
         <activity android:name=".Login" />
-        <activity android:name=".Intro" />
+
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

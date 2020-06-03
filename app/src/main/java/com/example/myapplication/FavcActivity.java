@@ -12,6 +12,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.google.android.material.snackbar.Snackbar;
+
 public class FavcActivity extends AppCompatActivity {
     EditText p1ed1,p1ed2,p2ed1,p2ed2,p3ed1,p3ed2;
     Button favcbtn;
@@ -31,6 +33,11 @@ public class FavcActivity extends AppCompatActivity {
 
         favcbtn=findViewById(R.id.favcbtn);
         fDb=new FavContactDB(this);
+
+        //back button
+        getSupportActionBar().setTitle("Favourite Contacts");
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
 
         //fetch
 
@@ -99,13 +106,12 @@ public class FavcActivity extends AppCompatActivity {
     }
     public void onSaveSuccess() {
         favcbtn.setEnabled(true);
-        Toast.makeText(getApplicationContext(),"Data Saved Successfully",Toast.LENGTH_LONG).show();
-        Intent intent=new Intent(FavcActivity.this,EditActivity.class);
-        startActivity(intent);
+        Snackbar snackbar = Snackbar.make(findViewById(android.R.id.content), "Data Saved Successfully", Snackbar.LENGTH_LONG);
+        snackbar.show();
     }
     public void onSaveFailed() {
-        Toast.makeText(getBaseContext(), "Some error occured..\nTry again later", Toast.LENGTH_LONG).show();
-
+        Snackbar snackbar = Snackbar.make(findViewById(android.R.id.content), "Some error occurred..\nTry again later", Snackbar.LENGTH_LONG);
+        snackbar.show();
         favcbtn.setEnabled(true);
     }
     public boolean validate() {

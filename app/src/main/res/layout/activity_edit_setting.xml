@@ -11,20 +11,7 @@
         android:orientation="vertical"
         android:gravity="center_horizontal"
         android:background="#E8EAF6">
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:background="#E57373">
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text=" Settings"
-                android:layout_centerInParent="true"
-                android:textSize="25dp"
-                android:drawableLeft="@drawable/ic_settings"
-                android:padding="15dp"/>
-        </RelativeLayout>
+
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content">

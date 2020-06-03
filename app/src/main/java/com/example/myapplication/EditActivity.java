@@ -15,6 +15,11 @@ public class EditActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_edit);
 
+        //back button
+        getSupportActionBar().setTitle("Edit contacts");
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+
         er1=findViewById(R.id.er1);
         er2=findViewById(R.id.er2);
 

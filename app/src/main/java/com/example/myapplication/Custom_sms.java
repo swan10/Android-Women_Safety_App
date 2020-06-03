@@ -39,6 +39,10 @@ public class Custom_sms extends AppCompatActivity {
         cs5=findViewById(R.id.cs5);
         csgps=findViewById(R.id.csgps);
 
+        //back button
+        getSupportActionBar().setTitle("SMS");
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
         //fetch previous details
         Intent intent=getIntent();
         String no=intent.getStringExtra("no");

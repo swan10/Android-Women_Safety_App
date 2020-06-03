@@ -11,6 +11,7 @@
         android:id="@+id/name_log"
         android:layout_width="350dp"
         android:layout_height="45dp"
+        android:layout_margin="10dp"
         android:background="@drawable/rounded_button"
         android:drawableStart="@drawable/ic_person"
         android:ems="10"
@@ -20,10 +21,10 @@
         android:paddingRight="15dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.508"
+        app:layout_constraintHorizontal_bias="0.491"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView5"
-        app:layout_constraintVertical_bias="0.07" />
+        app:layout_constraintVertical_bias="0.101" />
 
     <EditText
         android:id="@+id/pwd_log"
@@ -36,6 +37,7 @@
         android:inputType="textPassword"
         android:paddingLeft="15dp"
         android:paddingRight="35dp"
+        android:layout_margin="10dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.508"
@@ -50,6 +52,7 @@
         android:background="@drawable/rounded_button"
         android:text="Sign In"
         android:textAllCaps="false"
+        android:layout_margin="10dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
@@ -57,39 +60,48 @@
         app:layout_constraintTop_toBottomOf="@+id/pwd_log"
         app:layout_constraintVertical_bias="0.052" />
 
-    <Button
+    <ImageView
         android:id="@+id/button_logg"
-        android:layout_width="300dp"
+        android:layout_width="40dp"
         android:layout_height="40dp"
         android:background="@drawable/rounded_button"
-        android:drawableStart="@drawable/google"
-        android:paddingLeft="20dp"
-        android:paddingRight="25dp"
-        android:text="Sign in with Google"
-        android:textAllCaps="false"
+        android:padding="3dp"
+        android:src="@drawable/google"
+
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintHorizontal_bias="0.326"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/button_log"
-        app:layout_constraintVertical_bias="0.379" />
+        app:layout_constraintVertical_bias="0.268" />
 
-    <Button
-        android:id="@+id/button_logf"
-        android:layout_width="300dp"
+    <ImageView
+        android:id="@+id/button_logt"
+        android:layout_width="40dp"
         android:layout_height="40dp"
         android:background="@drawable/rounded_button"
-        android:drawableStart="@drawable/facebook"
-        android:paddingLeft="20dp"
-        android:paddingRight="20dp"
-        android:text="Sign in with Facebook"
-        android:textAllCaps="false"
+        android:src="@drawable/twitter"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.495"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button_logg"
-        app:layout_constraintVertical_bias="0.162" />
+        app:layout_constraintHorizontal_bias="0.164"
+        app:layout_constraintStart_toEndOf="@+id/button_logf"
+        app:layout_constraintTop_toBottomOf="@+id/button_log"
+        app:layout_constraintVertical_bias="0.268" />
+
+    <ImageView
+        android:id="@+id/button_logf"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+
+        android:src="@drawable/facebook"
+
+
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.114"
+        app:layout_constraintStart_toEndOf="@+id/button_logg"
+        app:layout_constraintTop_toBottomOf="@+id/button_log"
+        app:layout_constraintVertical_bias="0.268" />
 
     <TextView
         android:id="@+id/textView_logr"
@@ -99,10 +111,9 @@
         android:textColorHint="#000000"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/button_logf"
-        app:layout_constraintVertical_bias="0.278" />
+        app:layout_constraintVertical_bias="0.183" />
 
     <TextView
         android:id="@+id/textView_logsk"
@@ -118,10 +129,11 @@
     <ImageView
         android:id="@+id/imageView5"
         android:layout_width="175dp"
-        android:layout_height="90dp"
-        android:layout_marginTop="40dp"
+        android:layout_height="175dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.14"
         app:srcCompat="@drawable/woman" />
 </androidx.constraintlayout.widget.ConstraintLayout>

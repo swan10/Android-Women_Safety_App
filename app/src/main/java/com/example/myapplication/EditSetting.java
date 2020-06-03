@@ -47,6 +47,11 @@ public class EditSetting extends AppCompatActivity {
         tv2=findViewById(R.id.et2);
         tv3=findViewById(R.id.et3);
 
+        //back button
+        getSupportActionBar().setTitle("Settings");
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+        //permission check
         bt1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

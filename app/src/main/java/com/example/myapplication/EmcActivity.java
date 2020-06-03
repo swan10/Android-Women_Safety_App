@@ -13,6 +13,8 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.material.snackbar.Snackbar;
+
 public class EmcActivity extends AppCompatActivity {
     EditText emc1,emc2,emc3,emc4,emc5,emc6,emc7;
     Button emcb1;
@@ -32,6 +34,11 @@ public class EmcActivity extends AppCompatActivity {
         emc7=findViewById(R.id.emc7);
         emcb1=findViewById(R.id.emcb1);
         eDb=new Emergency(this);
+
+        //back button
+        getSupportActionBar().setTitle("Emergency Contacts");
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
 
         //fetch
 
@@ -105,13 +112,12 @@ public class EmcActivity extends AppCompatActivity {
     }
     public void onSaveSuccess() {
         emcb1.setEnabled(true);
-        Toast.makeText(getApplicationContext(),"Data Saved Successfully",Toast.LENGTH_LONG).show();
-        Intent intent=new Intent(EmcActivity.this,EditActivity.class);
-        startActivity(intent);
+        Snackbar snackbar = Snackbar.make(findViewById(android.R.id.content), "Data Saved Successfully", Snackbar.LENGTH_LONG);
+        snackbar.show();
     }
     public void onSaveFailed() {
-        Toast.makeText(getBaseContext(), "Some error occured..\nTry again later", Toast.LENGTH_LONG).show();
-
+        Snackbar snackbar = Snackbar.make(findViewById(android.R.id.content), "Some error occurred..\nTry again later", Snackbar.LENGTH_LONG);
+        snackbar.show();
         emcb1.setEnabled(true);
     }
     public boolean validate() {

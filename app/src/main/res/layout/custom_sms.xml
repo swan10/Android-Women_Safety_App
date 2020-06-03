@@ -10,19 +10,11 @@
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent">
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/icons_sms"
-                android:layout_centerHorizontal="true"
-                android:layout_marginTop="50dp"
-                android:layout_marginBottom="20dp"
-                android:padding="5dp"
-                android:id="@+id/cs1"/>
+
             <EditText
                 android:layout_width="250sp"
                 android:layout_height="50dp"
-                android:layout_below="@+id/cs1"
+
                 android:layout_marginTop="25dp"
                 android:maxLength="10"
                 android:hint="Phone Number"

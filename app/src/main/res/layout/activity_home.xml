@@ -40,20 +40,23 @@
         android:textSize="20dp"
 
         android:layout_centerHorizontal="true"/>
+
+
     <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/icons_stop"
-        android:layout_below="@+id/custom_button"
-        android:layout_centerHorizontal="true"
-        android:layout_margin="10dp"
-        android:background="@drawable/rounded_button"
-        android:visibility="invisible"
         android:id="@+id/custom_stop"
-        android:onClick="custom_Exit"/>
-
-
-
+        android:layout_width="290dp"
+        android:layout_height="238dp"
+        android:layout_below="@+id/custom_switch"
+        android:layout_alignStart="@+id/custom_button"
+        android:layout_alignEnd="@+id/custom_button"
+        android:layout_marginStart="2dp"
+        android:layout_marginTop="130dp"
+        android:layout_marginEnd="-1dp"
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/rounded_button"
+        android:onClick="custom_Exit"
+        android:src="@drawable/stop"
+        android:visibility="invisible" />
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:layout_width="wrap_content"

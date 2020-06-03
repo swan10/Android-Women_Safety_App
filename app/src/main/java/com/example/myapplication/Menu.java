@@ -64,6 +64,9 @@ public class Menu extends AppCompatActivity implements PopupMenu.OnMenuItemClick
         g1tv2=findViewById(R.id.g1tv2);
         g1tv3=findViewById(R.id.g1tv3);
 
+        //remove action bar
+        getSupportActionBar().hide();
+
         //fetching contacts
         Cursor cursor=fDb.getAllData();
 

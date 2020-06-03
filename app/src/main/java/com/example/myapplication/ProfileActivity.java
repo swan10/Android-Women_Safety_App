@@ -24,6 +24,11 @@ public class ProfileActivity extends AppCompatActivity {
         bt1=findViewById(R.id.bp1);
         myDb=new DatabaseHelper(this);
 
+        //back button
+        getSupportActionBar().setTitle("Profile");
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+
         //fetching
         Cursor cursor=myDb.getAllData();
         StringBuilder stringBuilder=new StringBuilder();

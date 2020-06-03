@@ -15,6 +15,8 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+import com.google.android.material.snackbar.Snackbar;
+
 public class Gov_help_call extends AppCompatActivity {
     private static final int REQUEST_CALL = 1;
     EditText editText;
@@ -26,6 +28,11 @@ public class Gov_help_call extends AppCompatActivity {
         setContentView(R.layout.activity_gov_help);
         editText=findViewById(R.id.editTextPhone);
         imageView=findViewById(R.id.call);
+
+        //back button
+        getSupportActionBar().setTitle("Government Helplines");
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
 
         imageView.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -44,7 +51,8 @@ public class Gov_help_call extends AppCompatActivity {
                 startActivity(new Intent(Intent.ACTION_CALL, Uri.parse(dial)));
             }
         } else {
-            Toast.makeText(Gov_help_call.this, "Enter Phone Number", Toast.LENGTH_SHORT).show();
+            Snackbar snackbar = Snackbar.make(findViewById(android.R.id.content), "Enter a valid phone number", Snackbar.LENGTH_LONG);
+            snackbar.show();
         }
     }
     @Override
@@ -53,7 +61,8 @@ public class Gov_help_call extends AppCompatActivity {
             if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
                 makePhoneCall();
             } else {
-                Toast.makeText(this, "Permission DENIED", Toast.LENGTH_SHORT).show();
+                Snackbar snackbar = Snackbar.make(findViewById(android.R.id.content), "Permission denied", Snackbar.LENGTH_LONG);
+                snackbar.show();
             }
         }
     }

@@ -61,6 +61,9 @@ public class HomeActivity extends AppCompatActivity {
         myDb=new DatabaseHelper(this);
         custom_stop=findViewById(R.id.custom_stop);
 
+        //remove action bar
+        getSupportActionBar().hide();
+
 
         //custom stop
 
@@ -119,7 +122,7 @@ public class HomeActivity extends AppCompatActivity {
                         // for ActivityCompat#requestPermissions for more details.
                         return;
                     }
-                    locationManager.requestLocationUpdates(LocationManager.NETWORK_PROVIDER, 20 * 1000, 0, listener);
+                    locationManager.requestLocationUpdates(LocationManager.NETWORK_PROVIDER, 20 * 1000, 50, listener);
                 }
 
                 // If, If permission is not enabled then else condition will execute.
@@ -231,13 +234,10 @@ public class HomeActivity extends AppCompatActivity {
             try{
                 SmsManager smgr = SmsManager.getDefault();
                 smgr.sendTextMessage(num,null,body,null,null);
-
-                Snackbar snackbar = Snackbar.make(findViewById(android.R.id.content), "SMS Sent Successfully", Snackbar.LENGTH_LONG);
-                snackbar.show();
+                Toast.makeText(HomeActivity.this,"SMS sent Successfully",Toast.LENGTH_SHORT).show();
             }
             catch (Exception e){
-                Snackbar snackbar = Snackbar.make(findViewById(android.R.id.content), "SMS Failed to Send, Please try again", Snackbar.LENGTH_LONG);
-                snackbar.show();
+                Toast.makeText(HomeActivity.this,"SMS Failed to Send, Please try again",Toast.LENGTH_SHORT).show();
             }
 
     }
@@ -315,6 +315,7 @@ public class HomeActivity extends AppCompatActivity {
                 SixthPermissionResult == PackageManager.PERMISSION_GRANTED ;
     }
 
+    //custom stop
     public void custom_Exit(View view) {
 
             ProcessPhoenix.triggerRebirth(HomeActivity.this);

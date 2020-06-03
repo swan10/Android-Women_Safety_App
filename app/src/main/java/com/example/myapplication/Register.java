@@ -9,11 +9,13 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
 public class Register extends AppCompatActivity {
-    private Button reg,login_g,login_f;
+    private Button reg;
+    ImageView reg_g,reg_f,reg_t;
     private EditText email,pwd,name;
     DatabaseHelper myDb;
 
@@ -28,19 +30,29 @@ public class Register extends AppCompatActivity {
         pwd=findViewById(R.id.pwd_reg);
 
         reg=findViewById(R.id.button_reg);
-        login_g=findViewById(R.id.button_regg);
-        login_f=findViewById(R.id.button_regf);
+        reg_g=findViewById(R.id.button_regg);
+        reg_f=findViewById(R.id.button_regf);
+        reg_t=findViewById(R.id.button_regt);
+
+        //remove action bar
+        getSupportActionBar().hide();
 
         TextView tv_l=findViewById(R.id.textView_regl);
         TextView tv_sk=findViewById(R.id.textView_regsk);
 
-        login_g.setOnClickListener(new View.OnClickListener() {
+        reg_g.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Toast.makeText(Register.this,"This sevice is not currently activated",Toast.LENGTH_SHORT).show();
             }
         });
-        login_f.setOnClickListener(new View.OnClickListener() {
+        reg_f.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(Register.this,"This sevice is not currently activated",Toast.LENGTH_SHORT).show();
+            }
+        });
+        reg_t.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Toast.makeText(Register.this,"This sevice is not currently activated",Toast.LENGTH_SHORT).show();
