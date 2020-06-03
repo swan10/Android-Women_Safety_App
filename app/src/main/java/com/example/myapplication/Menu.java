@@ -235,7 +235,9 @@ public class Menu extends AppCompatActivity implements PopupMenu.OnMenuItemClick
     //back button
     public void onBackPressed(){
         Intent i=new Intent(Menu.this,HomeActivity.class);
+        overridePendingTransition(0, 0);
         startActivity(i);
+        overridePendingTransition(0, 0);
     }
 
     //phone call

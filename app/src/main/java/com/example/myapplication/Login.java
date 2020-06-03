@@ -12,8 +12,11 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.material.snackbar.Snackbar;
+
 public class Login extends AppCompatActivity {
 
+    private long backPressedTime;
     private EditText name,pwd;
     private Button login,login_g,login_f;
     DatabaseHelper myDb;
@@ -94,5 +97,19 @@ public class Login extends AppCompatActivity {
 
             }
         });
+    }
+    //back press activity
+    public void onBackPressed() {
+        if (backPressedTime + 2000 > System.currentTimeMillis()) {
+            finish();
+            this.finishAffinity();
+            //System.exit(1);
+
+
+        } else {
+            Snackbar snackbar = Snackbar.make(findViewById(android.R.id.content), "Press again to Exit...", Snackbar.LENGTH_LONG);
+            snackbar.show();
+        }
+        backPressedTime = System.currentTimeMillis();
     }
 }

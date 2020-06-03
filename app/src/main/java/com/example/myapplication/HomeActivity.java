@@ -60,7 +60,7 @@ public class HomeActivity extends AppCompatActivity {
         fDb = new FavContactDB(this);
         myDb=new DatabaseHelper(this);
         custom_stop=findViewById(R.id.custom_stop);
-        RequestMultiplePermission();
+
 
         //custom stop
 

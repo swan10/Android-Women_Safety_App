@@ -139,10 +139,6 @@ public class FavcActivity extends AppCompatActivity {
 
         return valid;
     }
-    //back button
-    public void onBackPressed(){
-        Intent i=new Intent(FavcActivity.this,EditActivity.class);
-        startActivity(i);
-    }
+
 
 }

@@ -125,10 +125,11 @@ public class Setting extends AppCompatActivity implements PopupMenu.OnMenuItemCl
     public boolean onMenuItemClick(MenuItem item) {
         switch (item.getItemId()){
             case R.id.item1:
-                Toast.makeText(this, "Item 1 clicked", Toast.LENGTH_SHORT).show();
+                this.finishAffinity();
                 return true;
             case R.id.item2:
-                Toast.makeText(this, "Item 2 clicked", Toast.LENGTH_SHORT).show();
+                Intent i=new Intent(Setting.this,Login.class);
+                startActivity(i);
                 return true;
             default:
                 return false;
