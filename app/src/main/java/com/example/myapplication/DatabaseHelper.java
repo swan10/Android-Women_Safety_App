@@ -78,4 +78,11 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return buffer.toString();
 
     }
+
+    public Integer getCount() {
+        SQLiteDatabase db = this.getWritableDatabase();
+        Cursor cursor = db.rawQuery("select count(*) from "+TABLE_NAME,null);
+        Integer i=cursor.getCount();
+        return i;
+    }
 }

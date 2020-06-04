@@ -131,7 +131,12 @@ public class Setting extends AppCompatActivity implements PopupMenu.OnMenuItemCl
                 this.finishAffinity();
                 return true;
             case R.id.item2:
+                SessionManagement sessionManagement = new SessionManagement(Setting.this);
+                sessionManagement.removeSession();
+
+
                 Intent i=new Intent(Setting.this,Login.class);
+                i.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK|Intent.FLAG_ACTIVITY_NEW_TASK);
                 startActivity(i);
                 return true;
             default:

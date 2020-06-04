@@ -43,6 +43,10 @@ public class Login extends AppCompatActivity {
         TextView tv_r=findViewById(R.id.textView_logr);
         TextView tv_sk=findViewById(R.id.textView_logsk);
 
+
+        //shared preferences
+        checkSession();
+
         login_g.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -93,7 +97,13 @@ public class Login extends AppCompatActivity {
                                 String passwordValue = pwd.getText().toString();
                                 if (myDb.isLoginValid(usernameValue, passwordValue)) {
 
+                                    //session save
+                                    SessionManagement sessionManagement = new SessionManagement(Login.this);
+                                    sessionManagement.saveSession(myDb.getCount());
+
+                                    //move to success activity
                                     Intent intent = new Intent(Login.this, HomeActivity.class);
+                                    intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK|Intent.FLAG_ACTIVITY_NEW_TASK);
                                     startActivity(intent);
                                     Toast.makeText(Login.this, "Login Successful!", Toast.LENGTH_SHORT).show();
                                     //Save.save(getApplicationContext(),"session","true");
@@ -124,4 +134,26 @@ public class Login extends AppCompatActivity {
         }
         backPressedTime = System.currentTimeMillis();
     }
+
+
+    //shared preferences
+    private void checkSession() {
+        //check if user is logged in
+        //if user is logged in --> move to mainActivity
+
+        SessionManagement sessionManagement = new SessionManagement(Login.this);
+        int userID = sessionManagement.getSession();
+
+        if(userID != -1){
+            //user id logged in and so move to mainActivity
+            Intent intent = new Intent(Login.this, HomeActivity.class);
+            intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK|Intent.FLAG_ACTIVITY_NEW_TASK);
+            startActivity(intent);
+        }
+        else{
+            //do nothing
+        }
+    }
+
+
 }

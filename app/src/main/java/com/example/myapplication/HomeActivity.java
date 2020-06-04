@@ -10,6 +10,7 @@ import android.Manifest;
 import android.annotation.SuppressLint;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.database.Cursor;
 import android.location.Location;
@@ -53,6 +54,13 @@ public class HomeActivity extends AppCompatActivity {
     ImageView custom_stop;
 
 
+    //sharedpreferences
+    public static final String SHARED_PREFS = "sharedPrefs";
+    public static final String SWITCH1 = "switchEnableButton";
+    private boolean switchOnOff;
+    private Switch switchEnableButton;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -60,6 +68,8 @@ public class HomeActivity extends AppCompatActivity {
         fDb = new FavContactDB(this);
         myDb=new DatabaseHelper(this);
         custom_stop=findViewById(R.id.custom_stop);
+
+
 
         //remove action bar
         getSupportActionBar().hide();
@@ -99,7 +109,7 @@ public class HomeActivity extends AppCompatActivity {
 
         //onclick functions
         final Button customButton = findViewById(R.id.custom_button);
-        Switch switchEnableButton = findViewById(R.id.custom_switch);
+        switchEnableButton = findViewById(R.id.custom_switch);
 
         customButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -143,6 +153,7 @@ public class HomeActivity extends AppCompatActivity {
                 } else {
                     customButton.setEnabled(false);
                 }
+                saveData();
             }
         });
 
@@ -173,6 +184,10 @@ public class HomeActivity extends AppCompatActivity {
                 startActivity(i);
             }
         };
+
+        //sharedpreferences
+        loadData();
+        updateViews();
     }
 
     //back press activity
@@ -320,5 +335,20 @@ public class HomeActivity extends AppCompatActivity {
 
             ProcessPhoenix.triggerRebirth(HomeActivity.this);
 
+    }
+
+    //switch sharedPreferences
+    public void saveData() {
+        SharedPreferences sharedPreferences = getSharedPreferences(SHARED_PREFS, MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        editor.putBoolean(SWITCH1, switchEnableButton.isChecked());
+        editor.apply();
+    }
+    public void loadData() {
+        SharedPreferences sharedPreferences = getSharedPreferences(SHARED_PREFS, MODE_PRIVATE);
+        switchOnOff = sharedPreferences.getBoolean(SWITCH1, false);
+    }
+    public void updateViews() {
+        switchEnableButton.setChecked(switchOnOff);
     }
 }
