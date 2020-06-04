@@ -8,11 +8,16 @@ import androidx.core.content.ContextCompat;
 
 import android.Manifest;
 import android.annotation.SuppressLint;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.database.Cursor;
+import android.hardware.Sensor;
+import android.hardware.SensorEvent;
+import android.hardware.SensorEventListener;
+import android.hardware.SensorManager;
 import android.location.Location;
 import android.location.LocationListener;
 import android.location.LocationManager;
@@ -34,6 +39,8 @@ import android.widget.Toast;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.snackbar.Snackbar;
 import com.jakewharton.processphoenix.ProcessPhoenix;
+
+import java.util.Objects;
 
 import static android.Manifest.permission.ACCESS_COARSE_LOCATION;
 import static android.Manifest.permission.ACCESS_FINE_LOCATION;
@@ -59,6 +66,12 @@ public class HomeActivity extends AppCompatActivity {
     public static final String SWITCH1 = "switchEnableButton";
     private boolean switchOnOff;
     private Switch switchEnableButton;
+
+    //shake event
+    private SensorManager mSensorManager;
+    private float mAccel;
+    private float mAccelCurrent;
+    private float mAccelLast;
 
 
     @Override
@@ -150,6 +163,16 @@ public class HomeActivity extends AppCompatActivity {
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if (isChecked) {
                     customButton.setEnabled(true);
+
+
+                    //shake event
+                    mSensorManager = (SensorManager) getSystemService(Context.SENSOR_SERVICE);
+                    Objects.requireNonNull(mSensorManager).registerListener(mSensorListener, mSensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER),
+                            SensorManager.SENSOR_DELAY_NORMAL);
+                    mAccel = 10f;
+                    mAccelCurrent = SensorManager.GRAVITY_EARTH;
+                    mAccelLast = SensorManager.GRAVITY_EARTH;
+                    
                 } else {
                     customButton.setEnabled(false);
                 }
@@ -188,6 +211,8 @@ public class HomeActivity extends AppCompatActivity {
         //sharedpreferences
         loadData();
         updateViews();
+
+
     }
 
     //back press activity
@@ -266,6 +291,36 @@ public class HomeActivity extends AppCompatActivity {
             startActivity(new Intent(Intent.ACTION_CALL, Uri.parse(dial)));
         }
     }
+
+    //shake event
+    private final SensorEventListener mSensorListener = new SensorEventListener() {
+        @Override
+        public void onSensorChanged(SensorEvent event) {
+            float x = event.values[0];
+            float y = event.values[1];
+            float z = event.values[2];
+            mAccelLast = mAccelCurrent;
+            mAccelCurrent = (float) Math.sqrt((double) (x * x + y * y + z * z));
+            float delta = mAccelCurrent - mAccelLast;
+            mAccel = mAccel * 0.9f + delta;
+            if (mAccel > 12) {
+                shake();
+            }
+        }
+        @Override
+        public void onAccuracyChanged(Sensor sensor, int accuracy) {
+        }
+    };
+
+    private void shake() {
+        String c1 = fDb.getData(s[0]);
+        if (c1.length()==0){
+            aletDailog();
+        }else {
+            makeCall(c1);
+        }
+    }
+
 
     //Creating RequestMultiplePermission() method to request multiple permissions
     private void RequestMultiplePermission() {
