@@ -75,13 +75,6 @@
                             android:layout_below="@+id/p1ed1"
                             android:layout_centerHorizontal="true"/>
 
-                        <ImageView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:src="@drawable/ic_search"
-                            android:layout_alignRight="@+id/p1ed1"
-                            />
-
                     </RelativeLayout>
                 </GridLayout>
                 <GridLayout
@@ -138,13 +131,6 @@
                             android:layout_below="@+id/p2ed1"
                             android:layout_centerHorizontal="true"/>
 
-                        <ImageView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:src="@drawable/ic_search"
-                            android:layout_alignRight="@+id/p2ed1"
-                            />
-
                     </RelativeLayout>
                 </GridLayout>
                 <GridLayout
@@ -200,13 +186,6 @@
                             android:layout_marginRight="15dp"
                             android:layout_below="@+id/p3ed1"
                             android:layout_centerHorizontal="true"/>
-
-                        <ImageView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:src="@drawable/ic_search"
-                            android:layout_alignRight="@+id/p3ed1"
-                            />
 
                     </RelativeLayout>
                 </GridLayout>

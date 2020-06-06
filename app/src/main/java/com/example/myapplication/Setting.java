@@ -31,7 +31,7 @@ public class Setting extends AppCompatActivity implements PopupMenu.OnMenuItemCl
         getSupportActionBar().hide();
 
         //profile
-        Cursor cursor=myDb.getAllData();
+        Cursor cursor=myDb.getNameData();
         StringBuilder stringBuilder=new StringBuilder();
         while (cursor.moveToNext()){
             stringBuilder.append(cursor.getString(1));

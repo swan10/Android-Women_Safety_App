@@ -128,7 +128,6 @@ public class HomeActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 customButton.setVisibility(View.INVISIBLE);
-                custom_stop.setVisibility(View.VISIBLE);
                 // Adding if condition inside button.
 
                 // If All permission is enabled successfully then this block will execute.
@@ -146,6 +145,8 @@ public class HomeActivity extends AppCompatActivity {
                         return;
                     }
                     locationManager.requestLocationUpdates(LocationManager.NETWORK_PROVIDER, 20 * 1000, 50, listener);
+                    custom_stop.setVisibility(View.VISIBLE);
+
                 }
 
                 // If, If permission is not enabled then else condition will execute.
@@ -172,7 +173,7 @@ public class HomeActivity extends AppCompatActivity {
                     mAccel = 10f;
                     mAccelCurrent = SensorManager.GRAVITY_EARTH;
                     mAccelLast = SensorManager.GRAVITY_EARTH;
-                    
+
                 } else {
                     customButton.setEnabled(false);
                 }

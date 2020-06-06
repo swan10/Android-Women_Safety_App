@@ -95,6 +95,7 @@ public class Register extends AppCompatActivity {
 
         if (!validate()) {
             onSignupFailed();
+            progressDialog.dismiss();
             return;
         }
 

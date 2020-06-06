@@ -1,15 +1,20 @@
 package com.example.myapplication;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
 
+import android.Manifest;
 import android.app.ProgressDialog;
-import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.database.Cursor;
 import android.os.Bundle;
+import android.provider.ContactsContract;
 import android.util.Patterns;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.google.android.material.snackbar.Snackbar;
@@ -34,7 +39,7 @@ public class FavcActivity extends AppCompatActivity {
         favcbtn=findViewById(R.id.favcbtn);
         fDb=new FavContactDB(this);
 
-        //back button
+        //action bar
         getSupportActionBar().setTitle("Favourite Contacts");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
@@ -72,6 +77,8 @@ public class FavcActivity extends AppCompatActivity {
         });
 
     }
+
+
     public void saveFavc(){
         final ProgressDialog progressDialog = new ProgressDialog(FavcActivity.this);
         progressDialog.setIndeterminate(true);
@@ -145,6 +152,5 @@ public class FavcActivity extends AppCompatActivity {
 
         return valid;
     }
-
 
 }
