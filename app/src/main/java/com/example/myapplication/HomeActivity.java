@@ -164,16 +164,24 @@ public class HomeActivity extends AppCompatActivity {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if (isChecked) {
-                    customButton.setEnabled(true);
+                    RequestMultiplePermission();
+                    if(CheckingPermissionIsEnabledOrNot()){
+                        switchEnableButton.setChecked(true);
+
+                        customButton.setEnabled(true);
 
 
-                    //shake event
-                    mSensorManager = (SensorManager) getSystemService(Context.SENSOR_SERVICE);
-                    Objects.requireNonNull(mSensorManager).registerListener(mSensorListener, mSensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER),
-                            SensorManager.SENSOR_DELAY_NORMAL);
-                    mAccel = 10f;
-                    mAccelCurrent = SensorManager.GRAVITY_EARTH;
-                    mAccelLast = SensorManager.GRAVITY_EARTH;
+                        //shake event
+                        mSensorManager = (SensorManager) getSystemService(Context.SENSOR_SERVICE);
+                        Objects.requireNonNull(mSensorManager).registerListener(mSensorListener, mSensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER),
+                                SensorManager.SENSOR_DELAY_NORMAL);
+                        mAccel = 10f;
+                        mAccelCurrent = SensorManager.GRAVITY_EARTH;
+                        mAccelLast = SensorManager.GRAVITY_EARTH;
+
+                    }else{
+                        switchEnableButton.setChecked(false);
+                    }
 
                 } else {
                     customButton.setEnabled(false);
@@ -214,6 +222,12 @@ public class HomeActivity extends AppCompatActivity {
         loadData();
         updateViews();
 
+        //first time check permission
+        SharedPreferences prefs = getSharedPreferences("prefs", MODE_PRIVATE);
+        boolean firstStart = prefs.getBoolean("firstStart", true);
+        if (firstStart) {
+            RequestMultiplePermission();
+        }
 
     }
 
@@ -221,6 +235,12 @@ public class HomeActivity extends AppCompatActivity {
     public void onBackPressed() {
         if (backPressedTime + 2000 > System.currentTimeMillis()) {
             finish();
+            //clear check permissions session data
+            SharedPreferences prefs = getSharedPreferences("prefs", MODE_PRIVATE);
+            SharedPreferences.Editor editor = prefs.edit();
+            editor.clear();
+            editor.commit();
+
             this.finishAffinity();
             //System.exit(1);
 
@@ -348,6 +368,10 @@ public class HomeActivity extends AppCompatActivity {
                         Manifest.permission.ACCESS_COARSE_LOCATION,
                         Manifest.permission.INTERNET
                 }, REQUEST_PERM);
+        SharedPreferences prefs = getSharedPreferences("prefs", MODE_PRIVATE);
+        SharedPreferences.Editor editor = prefs.edit();
+        editor.putBoolean("firstStart", false);
+        editor.apply();
     }
 
     // Calling override method.

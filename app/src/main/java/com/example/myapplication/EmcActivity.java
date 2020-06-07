@@ -93,6 +93,7 @@ public class EmcActivity extends AppCompatActivity {
 
         if (!validate()) {
             onSaveFailed();
+            progressDialog.dismiss();
             return;
         }
         new android.os.Handler().postDelayed(

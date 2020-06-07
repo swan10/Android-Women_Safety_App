@@ -94,6 +94,7 @@ public class FavcActivity extends AppCompatActivity {
 
         if (!validate()) {
             onSaveFailed();
+            progressDialog.dismiss();
             return;
         }
         new android.os.Handler().postDelayed(
