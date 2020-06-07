@@ -3,6 +3,7 @@ package com.example.myapplication;
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
+import android.database.DatabaseUtils;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
@@ -83,5 +84,13 @@ public class FavContactDB extends SQLiteOpenHelper {
         db.execSQL("DROP TABLE IF EXISTS "+TABLE_NAME);
         onCreate(db);
 
+    }
+
+    //get count
+    public Integer getCount() {
+        SQLiteDatabase db = this.getWritableDatabase();
+        int i = (int) DatabaseUtils.longForQuery(db, "SELECT COUNT(*) FROM favContact_table", null);
+
+        return i;
     }
 }

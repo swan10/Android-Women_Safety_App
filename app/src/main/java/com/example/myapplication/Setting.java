@@ -1,6 +1,7 @@
 package com.example.myapplication;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -17,6 +18,7 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class Setting extends AppCompatActivity implements PopupMenu.OnMenuItemClickListener{
     DatabaseHelper myDb;
+    FavContactDB fDb;
     private TextView name;
     RelativeLayout r1,sr1,sr2,sr3;
 
@@ -25,7 +27,12 @@ public class Setting extends AppCompatActivity implements PopupMenu.OnMenuItemCl
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_settings);
         myDb=new DatabaseHelper(this);
+        fDb=new FavContactDB(this);
         name=findViewById(R.id.sname);
+
+        if(fDb.getCount()==0){
+            alertContact();
+        }
 
         //remove action bar
         getSupportActionBar().hide();
@@ -88,18 +95,25 @@ public class Setting extends AppCompatActivity implements PopupMenu.OnMenuItemCl
             public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
                 switch (menuItem.getItemId()) {
                     case R.id.menu:
-                        startActivity(new Intent(getApplicationContext(), Menu.class));
-                        overridePendingTransition(0, 0);
-                        return true;
+                        if (fDb.getCount()==0){
+                            alertContact();
+                        }else {
+                            startActivity(new Intent(getApplicationContext(), Menu.class));
+                            overridePendingTransition(0, 0);
+                            return true;
+                        }
                     case R.id.settings:
 
                         return true;
                     case R.id.home:
-                        Intent intent=new Intent(Setting.this,HomeActivity.class);
-                        startActivity(intent);
-                        overridePendingTransition(0, 0);
-                        return true;
-
+                        if (fDb.getCount()==0){
+                            alertContact();
+                        }else {
+                            Intent intent = new Intent(Setting.this, HomeActivity.class);
+                            startActivity(intent);
+                            overridePendingTransition(0, 0);
+                            return true;
+                        }
 
                 }
                 return false;
@@ -142,5 +156,16 @@ public class Setting extends AppCompatActivity implements PopupMenu.OnMenuItemCl
             default:
                 return false;
         }
+    }
+
+    //contact needed alert
+    public void alertContact(){
+        AlertDialog.Builder builder = new AlertDialog.Builder(Setting.this);
+        builder.setTitle("We need your 3 precious contact details")
+                .setMessage("Please go to Edit->Favourite Contacts and give your 3 precious contact informations or else this App won't work properly.")
+                .setCancelable(true);
+        //Creating dialog box
+        AlertDialog dialog  = builder.create();
+        dialog.show();
     }
 }

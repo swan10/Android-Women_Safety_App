@@ -82,7 +82,8 @@ public class HomeActivity extends AppCompatActivity {
         myDb=new DatabaseHelper(this);
         custom_stop=findViewById(R.id.custom_stop);
 
-
+        //check contacts are given or not
+        checkContact();
 
         //remove action bar
         getSupportActionBar().hide();
@@ -229,6 +230,17 @@ public class HomeActivity extends AppCompatActivity {
             snackbar.show();
         }
         backPressedTime = System.currentTimeMillis();
+    }
+
+    //check contacts are given or not
+    public void checkContact(){
+        if(fDb.getCount()==0){
+            Intent i=new Intent(HomeActivity.this,Setting.class);
+            i.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK|Intent.FLAG_ACTIVITY_NEW_TASK);
+            startActivity(i);
+        }else{
+            //do nothing
+        }
     }
 
 
