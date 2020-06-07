@@ -3,6 +3,7 @@ package com.example.myapplication;
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
+import android.database.DatabaseUtils;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.database.sqlite.SQLiteStatement;
@@ -93,8 +94,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     //used for session
     public Integer getCount() {
         SQLiteDatabase db = this.getWritableDatabase();
-        Cursor cursor = db.rawQuery("select count(*) from "+TABLE_NAME,null);
-        Integer i=cursor.getCount();
+        int i = (int) DatabaseUtils.longForQuery(db, "SELECT COUNT(*) FROM women_table", null);
+
         return i;
     }
 
@@ -103,5 +104,14 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         SQLiteDatabase db = this.getWritableDatabase();
         Cursor res = db.rawQuery("SELECT * FROM "+TABLE_NAME+" WHERE ID = (SELECT MAX(ID) FROM "+TABLE_NAME+")",null);
         return res;
+    }
+
+    //delete
+    public void deleteTable(){
+        SQLiteDatabase db = this.getWritableDatabase();
+
+        db.execSQL("DROP TABLE IF EXISTS "+TABLE_NAME);
+        onCreate(db);
+
     }
 }

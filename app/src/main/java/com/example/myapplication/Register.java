@@ -1,9 +1,11 @@
 package com.example.myapplication;
 
 import androidx.annotation.Nullable;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.ProgressDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -12,6 +14,8 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.google.android.material.snackbar.Snackbar;
 
 public class Register extends AppCompatActivity {
     private Button reg;
@@ -83,7 +87,6 @@ public class Register extends AppCompatActivity {
     }
     public void signUp(){
 
-        reg.setEnabled(false);
         final ProgressDialog progressDialog = new ProgressDialog(Register.this);
         progressDialog.setIndeterminate(true);
         progressDialog.setMessage("Creating Account...");
@@ -102,19 +105,24 @@ public class Register extends AppCompatActivity {
         new android.os.Handler().postDelayed(
                 new Runnable() {
                     public void run() {
-                        // On complete call either onSignupSuccess or onSignupFailed
-                        // depending on success
-                        boolean isInserted = myDb.insertData(name.getText().toString(),email.getText().toString(),pwd.getText().toString());
-                        //Save.save(getApplicationContext(),"session","true");
-                        onSignupSuccess();
-                        // onSignupFailed();
+                        Integer i=myDb.getCount();
+                        if(i>0){
+                            alertDialog();
+                        }else{
+                            // On complete call either onSignupSuccess or onSignupFailed
+                            // depending on success
+                            boolean isInserted = myDb.insertData(name.getText().toString(),email.getText().toString(),pwd.getText().toString());
+                            //Save.save(getApplicationContext(),"session","true");
+                            onSignupSuccess();
+                            // onSignupFailed();
+                        }
+
                         progressDialog.dismiss();
                     }
                 }, 3000);
 
     }
     public void onSignupSuccess() {
-        reg.setEnabled(true);
         Toast.makeText(getApplicationContext(),"Registered Successfully",Toast.LENGTH_LONG).show();
         Intent intent=new Intent(Register.this,Login.class);
         startActivity(intent);
@@ -122,8 +130,6 @@ public class Register extends AppCompatActivity {
 
     public void onSignupFailed() {
         Toast.makeText(getBaseContext(), "Registration failed", Toast.LENGTH_LONG).show();
-
-        reg.setEnabled(true);
     }
     public boolean validate() {
         boolean valid = true;
@@ -159,5 +165,28 @@ public class Register extends AppCompatActivity {
     public void onBackPressed(){
         Intent i=new Intent(Register.this,Login.class);
         startActivity(i);
+    }
+
+    //alert message for phone number null validation
+    public void alertDialog(){
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle("Information");
+        builder.setMessage("Your previous account details will be deleted.");
+        builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                myDb.deleteTable();
+                boolean isInserted = myDb.insertData(name.getText().toString(), email.getText().toString(), pwd.getText().toString());
+                onSignupSuccess();
+            }
+        });
+        builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                Snackbar snackbar = Snackbar.make(findViewById(android.R.id.content), "Cancel pressed...", Snackbar.LENGTH_LONG);
+                snackbar.show();
+            }
+        });
+        builder.show();
     }
 }
