@@ -75,4 +75,13 @@ public class FavContactDB extends SQLiteOpenHelper {
 
     }
 
+
+    //delete table data
+    public void deleteTable(){
+        SQLiteDatabase db = this.getWritableDatabase();
+
+        db.execSQL("DROP TABLE IF EXISTS "+TABLE_NAME);
+        onCreate(db);
+
+    }
 }

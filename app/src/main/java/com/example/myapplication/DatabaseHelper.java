@@ -106,7 +106,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return res;
     }
 
-    //delete
+    //delete table data
     public void deleteTable(){
         SQLiteDatabase db = this.getWritableDatabase();
 

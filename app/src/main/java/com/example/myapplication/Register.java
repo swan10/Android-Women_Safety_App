@@ -22,12 +22,16 @@ public class Register extends AppCompatActivity {
     ImageView reg_g,reg_f,reg_t;
     private EditText email,pwd,name;
     DatabaseHelper myDb;
+    FavContactDB fDb;
+    Emergency eDb;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
         myDb=new DatabaseHelper(this);
+        fDb=new FavContactDB(this);
+        eDb=new Emergency(this);
 
         name=findViewById(R.id.name_reg);
         email=findViewById(R.id.email_reg);
@@ -138,7 +142,7 @@ public class Register extends AppCompatActivity {
         String passwordr = pwd.getText().toString();
 
         if (namer.isEmpty() || namer.length() < 3) {
-            name.setError("at least 3 characters");
+            name.setError("Enter your profile name between 3 to 10");
             valid = false;
         } else {
             name.setError(null);
@@ -176,6 +180,8 @@ public class Register extends AppCompatActivity {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
                 myDb.deleteTable();
+                fDb.deleteTable();
+                eDb.deleteTable();
                 boolean isInserted = myDb.insertData(name.getText().toString(), email.getText().toString(), pwd.getText().toString());
                 onSignupSuccess();
             }
