@@ -32,6 +32,7 @@ import android.widget.Button;
 import android.widget.CompoundButton;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.PopupMenu;
 import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -49,7 +50,7 @@ import static android.Manifest.permission.INTERNET;
 import static android.Manifest.permission.READ_PHONE_STATE;
 import static android.Manifest.permission.SEND_SMS;
 
-public class HomeActivity extends AppCompatActivity {
+public class HomeActivity extends AppCompatActivity implements PopupMenu.OnMenuItemClickListener {
 
     private long backPressedTime;
     private static final int REQUEST_PERM = 1;
@@ -59,6 +60,10 @@ public class HomeActivity extends AppCompatActivity {
     public static final String[] s = {"PC1", "PC2", "PC3","NAME"};
     DatabaseHelper myDb;
     ImageView custom_stop;
+
+    Integer d,t,distValue,timeValue;
+    String distanceString,timeString,htvs1,htvs2;
+    TextView htv1,htv2;
 
 
     //sharedpreferences
@@ -81,6 +86,22 @@ public class HomeActivity extends AppCompatActivity {
         fDb = new FavContactDB(this);
         myDb=new DatabaseHelper(this);
         custom_stop=findViewById(R.id.custom_stop);
+
+        d=0;t=0;
+        timeString="Disable";
+        distanceString="Disable";
+        htv1=findViewById(R.id.htv1);
+        htv2=findViewById(R.id.htv2);
+
+        //time and distance
+        SharedPreferences sp1 = getSharedPreferences("MYKEY1",0);
+        htvs1=sp1.getString("timeStatus",null);
+        timeValue=sp1.getInt("time",0);
+        SharedPreferences sp2 = getSharedPreferences("MYKEY2",0);
+        htvs2=sp2.getString("distanceStatus",null);
+        distValue=sp2.getInt("distance",0);
+        htv1.setText(htvs1);
+        htv2.setText(htvs2);
 
         //check contacts are given or not
         checkContact();
@@ -145,7 +166,7 @@ public class HomeActivity extends AppCompatActivity {
                         // for ActivityCompat#requestPermissions for more details.
                         return;
                     }
-                    locationManager.requestLocationUpdates(LocationManager.NETWORK_PROVIDER, 20 * 1000, 50, listener);
+                    locationManager.requestLocationUpdates(LocationManager.NETWORK_PROVIDER, timeValue, distValue, listener);
                     custom_stop.setVisibility(View.VISIBLE);
 
                 }
@@ -228,6 +249,7 @@ public class HomeActivity extends AppCompatActivity {
         if (firstStart) {
             RequestMultiplePermission();
         }
+
 
     }
 
@@ -442,5 +464,132 @@ public class HomeActivity extends AppCompatActivity {
     }
     public void updateViews() {
         switchEnableButton.setChecked(switchOnOff);
+    }
+
+    //show timer
+    public void showTime(View v){
+        PopupMenu popup=new PopupMenu(this,v);
+        popup.setOnMenuItemClickListener(this);
+        popup.inflate(R.menu.show_clock);
+        popup.show();
+    }
+
+    //show distance
+    public void showDistance(View v){
+        PopupMenu popup=new PopupMenu(this,v);
+        popup.setOnMenuItemClickListener(this);
+        popup.inflate(R.menu.show_dist);
+        popup.show();
+    }
+
+    @Override
+    public boolean onMenuItemClick(MenuItem item) {
+        d=0;t=0;
+        timeString="Disable";
+        distanceString="Disable";
+        switch (item.getItemId()) {
+            case R.id.clock1:
+                t=0;
+                timeString="Disable";
+                htv1.setText("Disable");
+                timeSharedPref();
+                return true;
+            case R.id.clock2:
+                t=60*100;
+                timeString="1 Minute";
+                htv1.setText("1 Minute");
+                timeSharedPref();
+                return true;
+            case R.id.clock3:
+                t=180*100;
+                timeString="3 Minute";
+                htv1.setText("3 Minute");
+                timeSharedPref();
+                return true;
+            case R.id.clock4:
+                timeString="5 Minute";
+                t=300*100;
+                htv1.setText("5 Minute");
+                timeSharedPref();
+                return true;
+            case R.id.clock5:
+                timeString="7 Minute";
+                t=420*100;
+                htv1.setText("7 Minute");
+                timeSharedPref();
+                return true;
+            case R.id.clock6:
+                timeString="10 Minute";
+                t=600*100;
+                htv1.setText("10 Minute");
+                timeSharedPref();
+                return true;
+            case R.id.clock7:
+                timeString="15 Minute";
+                t=900*100;
+                htv1.setText("15 Minute");
+                timeSharedPref();
+                return true;
+            case R.id.dist1:
+                d=0;
+                distanceString="Disable";
+                htv2.setText("Disable");
+                distanceSharedPref();
+                return true;
+            case R.id.dist2:
+                d=5;
+                distanceString="5 Meter";
+                htv2.setText("5 Meter");
+                distanceSharedPref();
+                return true;
+            case R.id.dist3:
+                d=10;
+                distanceString="10 Meter";
+                htv2.setText("10 Meter");
+                distanceSharedPref();
+                return true;
+            case R.id.dist4:
+                d=20;
+                distanceString="20 Meter";
+                htv2.setText("20 Meter");
+                distanceSharedPref();
+                return true;
+            case R.id.dist5:
+                d=30;
+                distanceString="30 Meter";
+                htv2.setText("30 Meter");
+                distanceSharedPref();
+                return true;
+            case R.id.dist6:
+                d=40;
+                distanceString="40 Meter";
+                htv2.setText("40 Meter");
+                distanceSharedPref();
+                return true;
+            case R.id.dist7:
+                d=50;
+                distanceString="50 Meter";
+                htv2.setText("50 Meter");
+                distanceSharedPref();
+                return true;
+            default:
+                return false;
+        }
+    }
+    public void timeSharedPref(){
+        SharedPreferences sp1 = getSharedPreferences("MYKEY1",0);
+        SharedPreferences.Editor editor = sp1.edit();
+        editor.putString("timeStatus" , timeString);
+        editor.putInt("time",t);
+        editor.apply();
+        editor.commit();
+    }
+    public void distanceSharedPref(){
+        SharedPreferences sp2 = getSharedPreferences("MYKEY2",0);
+        SharedPreferences.Editor editor = sp2.edit();
+        editor.putString("distanceStatus" , distanceString);
+        editor.putInt("distance",d);
+        editor.apply();
+        editor.commit();
     }
 }

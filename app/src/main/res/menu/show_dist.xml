@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/dist1"
+        android:title="Disable"/>
+    <item
+        android:id="@+id/dist2"
+        android:title="5 Meter"/>
+    <item
+        android:id="@+id/dist3"
+        android:title="10 Meter"/>
+    <item
+        android:id="@+id/dist4"
+        android:title="20 Meter"/>
+    <item
+        android:id="@+id/dist5"
+        android:title="30 Meter"/>
+    <item
+        android:id="@+id/dist6"
+        android:title="40 Meter"/>
+    <item
+        android:id="@+id/dist7"
+        android:title="50 Meter"/>
+</menu>
