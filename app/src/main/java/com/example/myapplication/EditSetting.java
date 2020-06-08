@@ -33,7 +33,7 @@ public class EditSetting extends AppCompatActivity {
     ImageView bt1,bt2,bt3,bt4;
     TextView tv1,tv2,tv3;
     private static final int REQUEST_PERM = 1;
-
+    private static final int REQ=2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,10 +51,24 @@ public class EditSetting extends AppCompatActivity {
         getSupportActionBar().setTitle("Settings");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
+        smsPermission();
+        phonePermission();
+        gpsPermission();
+
         //permission check
         bt1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                if (ActivityCompat.checkSelfPermission(EditSetting.this, CALL_PHONE) != PackageManager.PERMISSION_GRANTED) {
+
+                    ActivityCompat.requestPermissions(EditSetting.this, new String[]
+                            {
+                                    Manifest.permission.CALL_PHONE,
+                                    Manifest.permission.READ_PHONE_STATE,
+                            }, REQ);
+                }else{
+                    alertDialogPermission();
+                }
                 phonePermission();
             }
         });
@@ -62,6 +76,15 @@ public class EditSetting extends AppCompatActivity {
         bt2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                if (ActivityCompat.checkSelfPermission(EditSetting.this, SEND_SMS) != PackageManager.PERMISSION_GRANTED) {
+
+                    ActivityCompat.requestPermissions(EditSetting.this, new String[]
+                            {
+                                    SEND_SMS,
+                            }, REQ);
+                }else{
+                    alertDialogPermission();
+                }
                 smsPermission();
             }
         });
@@ -69,7 +92,17 @@ public class EditSetting extends AppCompatActivity {
         bt3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                gpsPermission();
+                if (ActivityCompat.checkSelfPermission(EditSetting.this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED
+                        && ActivityCompat.checkSelfPermission(EditSetting.this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+                    ActivityCompat.requestPermissions(EditSetting.this, new String[]
+                            {
+                                    Manifest.permission.ACCESS_COARSE_LOCATION,
+                                    Manifest.permission.ACCESS_FINE_LOCATION,
+                            }, REQ);
+                }else{
+                    alertDialogPermission();
+                }
+                    gpsPermission();
             }
         });
 
@@ -106,20 +139,8 @@ public class EditSetting extends AppCompatActivity {
     private void gpsPermission() {
         if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED
                 && ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-                requestPermissions(new String[]{Manifest.permission.ACCESS_COARSE_LOCATION, Manifest.permission.ACCESS_FINE_LOCATION, Manifest.permission.INTERNET}
-                        , REQUEST_PERM);
-                if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED
-                        && ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
-                    tv3.setText("Permission Denied");
-                    tv3.setTextColor(ContextCompat.getColor(this,R.color.permission_denied));
-
-                }else{
-                    tv3.setText("Permission Granted");
-                    tv3.setTextColor(ContextCompat.getColor(this,R.color.permission_granted));
-                }
-                }
-            return;
+            tv3.setText("Permission Denied");
+            tv3.setTextColor(ContextCompat.getColor(this,R.color.permission_denied));
         }
         else{
             tv3.setText("Permission Granted");
@@ -197,6 +218,34 @@ public class EditSetting extends AppCompatActivity {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
                         return;
+                    }
+                })
+                .show();
+    }
+
+    //go to app permission page to disable permission
+    public void goAppPermissionPage(){
+        Intent intent = new Intent(Settings.ACTION_APPLICATION_DETAILS_SETTINGS);
+        Uri uri = Uri.fromParts("package", getPackageName(), null);
+        intent.setData(uri);
+        startActivity(intent);
+    }
+
+    public void alertDialogPermission(){
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle("Message")
+                .setMessage("Do you want to disable permission?")
+                .setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        goAppPermissionPage();
+                        return;
+                    }
+                })
+                .setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+
                     }
                 })
                 .show();

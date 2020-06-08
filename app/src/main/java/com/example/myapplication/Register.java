@@ -46,7 +46,6 @@ public class Register extends AppCompatActivity {
         getSupportActionBar().hide();
 
         TextView tv_l=findViewById(R.id.textView_regl);
-        TextView tv_sk=findViewById(R.id.textView_regsk);
 
         reg_g.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -75,13 +74,6 @@ public class Register extends AppCompatActivity {
             }
         });
 
-        tv_sk.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent=new Intent(Register.this, HomeActivity.class);
-                startActivity(intent);
-            }
-        });
         reg.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

@@ -136,17 +136,6 @@
         app:layout_constraintTop_toBottomOf="@+id/button_regf"
         app:layout_constraintVertical_bias="0.218" />
 
-    <TextView
-        android:id="@+id/textView_regsk"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Use as a Guest"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView_regl"
-        app:layout_constraintVertical_bias="0.203" />
-
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="175dp"
